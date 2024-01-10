@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={fonts.rubik.variable}>
+      <body className={fonts.poppins.variable}>
         <Providers attribute="class" defaultTheme="system" enableSystem>
           {children}
         </Providers>

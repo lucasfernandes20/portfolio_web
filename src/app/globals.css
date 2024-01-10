@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
  
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -48,14 +47,22 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }
-}
 
- 
-@layer base {
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  ol, ul, menu {
+    list-style: none;
   }
 }
