@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -15,6 +16,21 @@ module.exports = {
       screens: {
         '2xl': '1400px'
       }
+    },
+    screens: {
+      mobile: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      tablet: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      laptop: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: '1400px',
+      // => @media (min-width: 1400px) { ... }
+
+      ...defaultTheme.screens
     },
     extend: {
       colors: {
