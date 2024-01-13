@@ -1,5 +1,5 @@
 // app/fonts.ts
-import { Rubik, Poppins } from 'next/font/google';
+import { Rubik, Poppins, Press_Start_2P } from 'next/font/google';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -13,7 +13,13 @@ const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
 
+const BungeeSpice = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400'
+});
+
 export const fonts = {
   rubik,
-  poppins
+  poppins,
+  BungeeSpice
 };

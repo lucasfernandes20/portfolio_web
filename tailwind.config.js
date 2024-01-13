@@ -17,6 +17,10 @@ module.exports = {
         '2xl': '1400px'
       }
     },
+    fontFamily: {
+      rubik: ['Rubik Maps', 'system-ui', 'sans-serif'],
+      ...defaultTheme.fontFamily
+    },
     screens: {
       mobile: '640px',
       // => @media (min-width: 640px) { ... }

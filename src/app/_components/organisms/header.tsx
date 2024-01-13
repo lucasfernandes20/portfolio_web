@@ -4,9 +4,9 @@ import { HeaderNavigator } from '../molecules/headerNavigator';
 
 export function Header() {
   return (
-    <header className="w-full absolute">
-      <div className="w-full flex items-center justify-between container px-6">
-        <h1 className="text-7xl blod font-extrabold text-muted-foreground ">
+    <header className="w-full absolute z-40">
+      <div className="w-full flex items-center justify-between container px-6 py-2">
+        <h1 className="text-6xl blod font-rubik text-muted-foreground">
           Portfolio
         </h1>
         <HeaderNavigator />
