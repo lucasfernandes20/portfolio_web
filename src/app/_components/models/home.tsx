@@ -8,35 +8,17 @@ import { GradientBall } from '../molecules/gradientBall';
 import { useEffect, useState } from 'react';
 import { AboutMe } from '../molecules/aboutMe';
 import { RecommendationSection } from '../organisms/recommendationSection';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import countYearFromDate from '@/app/utils/countYearsFromDate';
+import { RepositoriesList } from '../organisms/repositoriesList';
+import { Github } from 'lucide-react';
 
 export function HomeModel() {
   const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>();
 
   useEffect(() => {
     const initDate = new Date('2022-02-12');
-    const currentDate = new Date();
-    const monthsOnAYear = 12;
-
-    const diffYears = currentDate.getFullYear() - initDate.getFullYear();
-    const diffMonths = currentDate.getMonth() + 1 - (initDate.getMonth() + 1);
-    const totalMonths = diffYears * monthsOnAYear + diffMonths;
-
-    const intYears = Math.floor(totalMonths / monthsOnAYear).toFixed(0);
-
-    console.log(diffMonths, diffYears, totalMonths);
-    console.log(totalMonths);
-
-    let total = `${intYears} year${diffYears !== 1 ? 's' : ''}`;
-
-    if (totalMonths % 12) {
-      total +=
-        ' ' +
-        `and ${totalMonths % 12} month${totalMonths % 12 !== 1 ? 's' : ''}`;
-    }
-
-    console.log(total);
-    setTotalTimeAsDev(total);
+    const totalTime = countYearFromDate(initDate);
+    setTotalTimeAsDev(totalTime);
   }, []);
 
   return (
@@ -80,15 +62,17 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
-        <div className="h-full w-full grid grid-cols-4 gap-5">
-          {Array.from(Array(12)).map((_, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <p>Repositório</p>
-              </CardHeader>
-              <CardContent>uhdasudhasud</CardContent>
-            </Card>
-          ))}
+        <div>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2 mb-7">
+              <Github />
+              Github repositories
+            </h2>
+            <span className="underline cursor-pointer text-muted-foreground">
+              see all
+            </span>
+          </div>
+          <RepositoriesList />
         </div>
       </ScrollPageSection>
     </>
