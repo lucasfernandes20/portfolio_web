@@ -7,6 +7,8 @@ import { ScrollPageSection } from '@/app/assets/scrollpage';
 import { GradientBall } from '../molecules/gradientBall';
 import { useEffect, useState } from 'react';
 import { AboutMe } from '../molecules/aboutMe';
+import { RecommendationSection } from '../organisms/recommendationSection';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 export function HomeModel() {
   const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>();
@@ -72,11 +74,21 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="second_section">
-        <AboutMe />
+        <div className="w-full h-full flex flex-col laptop:flex-row items-center justify-between gap-16">
+          <RecommendationSection />
+          <AboutMe />
+        </div>
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
-        <div className="flex items-center justify-center h-full">
-          <h2 className="text-7xl text-muted-foreground">Section 3</h2>
+        <div className="h-full w-full grid grid-cols-4 gap-5">
+          {Array.from(Array(12)).map((_, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <p>Repositório</p>
+              </CardHeader>
+              <CardContent>uhdasudhasud</CardContent>
+            </Card>
+          ))}
         </div>
       </ScrollPageSection>
     </>
