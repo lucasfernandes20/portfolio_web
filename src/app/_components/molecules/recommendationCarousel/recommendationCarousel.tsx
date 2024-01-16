@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+'use client';
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +19,7 @@ export function RecommendationCarousel() {
         className="w-full"
       >
         <CarouselContent className="">
-          {recommendations.toReversed().map((recommendation, index) => (
+          {recommendations.reverse().map((recommendation, index) => (
             <CarouselItem key={index} className="pt-2 md:basis-3/4">
               <RecommendationCard recommendation={recommendation} />
             </CarouselItem>

@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button';
 
 export function HeaderNavigator() {
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const targetSection = document.querySelector('#' + sectionId);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+    targetSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -37,7 +37,9 @@ export function HeaderNavigator() {
           className="hover:bg-inherit hover:scale-105"
           onClick={() => scrollToSection('third_section')}
         >
-          <p className="text-muted-foreground text-base font-normal">stacks</p>
+          <p className="text-muted-foreground text-base font-normal">
+            projects
+          </p>
         </Button>
       </li>
       <li>
@@ -47,9 +49,7 @@ export function HeaderNavigator() {
           className="hover:bg-inherit hover:scale-105"
           onClick={() => scrollToSection('forth_section')}
         >
-          <p className="text-muted-foreground text-base font-normal">
-            projects
-          </p>
+          <p className="text-muted-foreground text-base font-normal">stacks</p>
         </Button>
       </li>
     </ul>

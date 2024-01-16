@@ -11,6 +11,8 @@ import { RecommendationSection } from '../organisms/recommendationSection';
 import countYearFromDate from '@/app/utils/countYearsFromDate';
 import { RepositoriesList } from '../organisms/repositoriesList';
 import { Github } from 'lucide-react';
+import { RepositoryDialog } from '../molecules/repositoryDialog';
+import Link from 'next/link';
 
 export function HomeModel() {
   const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>();
@@ -25,7 +27,7 @@ export function HomeModel() {
     <>
       <Header />
       <ScrollPageSection id="first_section">
-        <div className="w-full h-full z-30 relative">
+        <div className="w-full z-30">
           <div className="w-full flex flex-col text-center items-center justify-center">
             <ThemeSwitcher />
             <h1 className="text-5xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
@@ -56,21 +58,25 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="second_section">
-        <div className="w-full h-full flex flex-col laptop:flex-row items-center justify-between gap-16">
+        <div className="w-full flex flex-col laptop:flex-row items-center justify-between gap-16">
           <RecommendationSection />
           <AboutMe />
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
         <div>
+          <RepositoryDialog />
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2 mb-7">
               <Github />
               Github repositories
             </h2>
-            <span className="underline cursor-pointer text-muted-foreground">
+            <Link
+              className="underline cursor-pointer text-muted-foreground"
+              href="/repositories"
+            >
               see all
-            </span>
+            </Link>
           </div>
           <RepositoriesList />
         </div>

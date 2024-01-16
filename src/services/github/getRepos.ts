@@ -1,10 +1,7 @@
-import { Endpoints } from '@octokit/types';
+import { ListUserReposResponse } from '@/app/context/store';
 import octokitService from './index';
 
 const GITHUB_NAME = process.env.NEXT_PUBLIC_GITHUB_NAME;
-
-export type ListUserReposResponse =
-  Endpoints['GET /repos/{owner}/{repo}']['response']['data'];
 
 export async function getReposRequest(
   perPage: number,

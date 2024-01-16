@@ -1,62 +1,56 @@
+'use client';
+import {
+  ListUserReposResponseWithIcon,
+  useGlobalContext
+} from '@/app/context/store';
 import countYearFromDate from '@/app/utils/countYearsFromDate';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader
-} from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-import { ListUserReposResponse } from '@/services/github/getRepos';
-import { BookCheck, Eye, MoveDiagonal } from 'lucide-react';
-import { useState } from 'react';
+import { Card, CardFooter, CardHeader } from '@/components/ui/card';
+import { BookCheck, MoveDiagonal } from 'lucide-react';
 
 interface RepositoryCardProps {
-  repository: ListUserReposResponse;
+  repository: ListUserReposResponseWithIcon;
 }
 
 export function RepositoryCard({ repository }: RepositoryCardProps) {
-  const [expand, setExpand] = useState(false);
+  const { setSelectedRepository } = useGlobalContext();
+
+  const selectRepo = () => {
+    setSelectedRepository(repository);
+  };
+
   return (
-    <Card
-      className={cn(
-        expand ? 'scale-125 origin-top-left z-40' : 'scale-100',
-        'transition-all overflow-hidden relative'
-      )}
-    >
-      <CardHeader className="flex flex-row items-center justify-between gap-2 py-3">
-        <div>
+    <Card className="flex flex-col justify-between">
+      <CardHeader className="flex flex-row items-start justify-between gap-2 py-3">
+        <div className="w-[calc(100%-1.5rem) overflow-x-hidden">
           <div className="flex items-end gap-2 mb-1">
             <BookCheck />
-            <p className="text-base leading-none">{repository.name}</p>
+            <p className="text-base leading-none text-ellipsis overflow-hidden whitespace-nowrap">
+              {repository.name}
+            </p>
           </div>
-          <span className="text-xs text-muted-foreground/80 flex items-center gap-2">
+          <span className=" text-xs text-muted-foreground/80 flex items-center gap-2 tablet:flex-col tablet:items-start laptop:items-center laptop:flex-row">
             <p>{`${countYearFromDate(new Date(repository.created_at))} ago`}</p>
-            <div className="w-1 h-1 rounded-full bg-muted-foreground" />
-            <p>{repository.visibility}</p>
+            <div className="w-1 h-1 rounded-full bg-muted-foreground inline-block tablet:hidden laptop:inline-block" />
+            <p className="font-normal tablet:font-bold laptop:font-normal">
+              {repository.visibility}
+            </p>
           </span>
         </div>
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setExpand((prev) => !prev)}
+          onClick={selectRepo}
+          className="w-6 h-6"
         >
           <MoveDiagonal />
         </Button>
       </CardHeader>
-      <CardContent className={expand ? '' : 'truncate h-11'}>
-        {repository.description}
-        <div>
-          {expand ? (
-            <Button variant="link" size="sm" className="w-full">
-              <p className="truncate">{repository.url}</p>
-            </Button>
-          ) : null}
-        </div>
-      </CardContent>
       <CardFooter className="gap-2">
-        <Badge variant="secondary">{repository.language}</Badge>
+        <Badge variant="secondary" className="cursor-pointer">
+          {repository.language}
+        </Badge>
       </CardFooter>
     </Card>
   );

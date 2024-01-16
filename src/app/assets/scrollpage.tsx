@@ -13,7 +13,7 @@ export function ScrollPageSection({
     <section
       id={id}
       className={
-        'w-screen h-svh container overflow-x-hidden snap-start pt-36 pb-20' +
+        'w-screen h-svh container overflow-x-hidden snap-start flex items-center justify-center relative' +
         className
       }
     >
