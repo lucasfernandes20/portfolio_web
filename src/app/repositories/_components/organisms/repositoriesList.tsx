@@ -89,7 +89,9 @@ export function RepositoriesList() {
       {!repositories.data.length &&
       !repositories.error &&
       !repositories.loading ? (
-        <h2>There are no repositories</h2>
+        <h2 className="text-muted-foreground/80 text-center">
+          There are no repositories
+        </h2>
       ) : null}
     </div>
   );
