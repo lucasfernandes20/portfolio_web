@@ -13,8 +13,12 @@ import { RepositoryCard } from '@/app/_components/molecules/repositoryCard';
 const REPO_INITIAL_STATE = { data: [], loading: true, error: false };
 
 export function RepositoriesList() {
-  const { debouncedNameInputValue, languageInputValue, onlyPublic } =
-    useGlobalContext();
+  const {
+    debouncedNameInputValue,
+    languageInputValue,
+    onlyPublic,
+    typingNameInputValue
+  } = useGlobalContext();
 
   const [repositories, setRepositories] = useState<{
     data: ListUserReposResponseWithIcon[];
@@ -38,8 +42,11 @@ export function RepositoriesList() {
     }
 
     if (languageInputValue) {
-      filteredRepos = filteredRepos.filter((repo) =>
-        repo.language.toLowerCase().includes(languageInputValue.toLowerCase())
+      filteredRepos = filteredRepos.filter(
+        (repo) =>
+          repo.language
+            ?.toLowerCase()
+            .includes(languageInputValue.toLowerCase())
       );
     }
 
@@ -76,10 +83,10 @@ export function RepositoriesList() {
   };
 
   return (
-    <div className="w-full pt-6 flex flex-col tablet:grid tablet:auto-cols-max tablet:grid-cols-3 gap-3">
-      {repositories.loading
+    <div className="w-full pt-6 flex flex-col tablet:grid tablet:auto-cols-max tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-3">
+      {repositories.loading || typingNameInputValue
         ? Array.from(Array(20)).map((_, index) => (
-            <Skeleton key={index} className="h-36 rounded-xl" />
+            <Skeleton key={index} className="h-32 rounded-xl" />
           ))
         : repositories.error
           ? null

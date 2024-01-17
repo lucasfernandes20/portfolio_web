@@ -1,6 +1,6 @@
 export function AboutMe() {
   return (
-    <div className="w-full h-full flex items-center laptop:w-1/2 text-start text-muted-foreground text-xs tablet:text-base laptop:text-sm desktop:text-base">
+    <div className="w-full h-full bg-transparent backdrop-blur-sm flex items-center laptop:w-1/2 text-start text-muted-foreground text-xs tablet:text-base laptop:text-sm desktop:text-base">
       <p>
         <span className="text-sm tablet:text-base laptop:text-base desktop:text-xl font-bold">
           Hello, {` I'm `} a dedicated web developer, specializing in Javascript

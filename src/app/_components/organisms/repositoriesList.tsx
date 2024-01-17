@@ -20,10 +20,6 @@ export function RepositoriesList() {
     getRepositories();
   }, []);
 
-  useEffect(() => {
-    console.log(repositories);
-  }, [repositories]);
-
   const getRepositories = async () => {
     try {
       const reposPerPage = 9;

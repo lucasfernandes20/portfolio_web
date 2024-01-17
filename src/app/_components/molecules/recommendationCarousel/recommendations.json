@@ -1,8 +1,9 @@
 [
   {
-    "name": "Kevin Mendonça Oliveira",
-    "recommendation": "Tive a oportunidade de trabalhar com o Lucas durante o projeto Recipes App, na Trybe. Lucas trouxe para o grupo uma nova forma de estilização front-end, styled components, demonstrando iniciativa, domínio do framework, comunicação e didática para ensinar ao restante do grupo como utilizá-lo.",
-    "position": "Em 3 de dezembro de 2021 Kevin trabalhava com Lucas na mesma equipe."
+    "name": "Eduardo Barcelos",
+    "recommendation": "Tive a oportunidade de trabalhar junto com Lucas na Triple AI. Ele foi um profissional muito competente e com uma entrega de qualidade muito grande em toda parte do front. Seja na parte de landing page ou então na ferramenta de chatbot. Além disso, sempre teve uma habilidade de comunicação muito desenvolvida, o que facilitou todo trabalho desenvolvido.",
+    "position": "Em 22 de novembro de 2023 Eduardo trabalhava com Lucas na mesma equipe."
+
   },
   {
     "name": "Caio Targino",
@@ -11,9 +12,8 @@
 
   },
   {
-    "name": "Eduardo Barcelos",
-    "recommendation": "Tive a oportunidade de trabalhar junto com Lucas na Triple AI. Ele foi um profissional muito competente e com uma entrega de qualidade muito grande em toda parte do front. Seja na parte de landing page ou então na ferramenta de chatbot. Além disso, sempre teve uma habilidade de comunicação muito desenvolvida, o que facilitou todo trabalho desenvolvido.",
-    "position": "Em 22 de novembro de 2023 Eduardo trabalhava com Lucas na mesma equipe."
-
+    "name": "Kevin Mendonça Oliveira",
+    "recommendation": "Tive a oportunidade de trabalhar com o Lucas durante o projeto Recipes App, na Trybe. Lucas trouxe para o grupo uma nova forma de estilização front-end, styled components, demonstrando iniciativa, domínio do framework, comunicação e didática para ensinar ao restante do grupo como utilizá-lo.",
+    "position": "Em 3 de dezembro de 2021 Kevin trabalhava com Lucas na mesma equipe."
   }
 ]

@@ -23,6 +23,7 @@ export function FilterBar() {
     setDebouncedNameInputValue,
     setLanguageInputValue,
     setOnlyPublic,
+    setTypingNameInputValue,
     debouncedNameInputValue,
     languageInputValue,
     onlyPublic
@@ -30,17 +31,19 @@ export function FilterBar() {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNameInputValue(event.target.value.trimStart());
+    setTypingNameInputValue(true);
   };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setDebouncedNameInputValue(nameInputValue);
+      setTypingNameInputValue(false);
     }, 500);
     return () => clearTimeout(timeoutId);
   }, [nameInputValue, setDebouncedNameInputValue]);
 
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full h-52 flex flex-col gap-2">
       <form className="w-full flex flex-col tablet:flex-row items-start tablet:items-center justify-center gap-4 p-4">
         <Label htmlFor="repositoryName" className="w-full tablet:w-[180px]">
           <Input
@@ -78,14 +81,13 @@ export function FilterBar() {
             checked={onlyPublic}
             onCheckedChange={(e) => {
               const target = e.valueOf();
-              console.log(target);
               setOnlyPublic(target as boolean);
             }}
           />
           only public
         </Label>
       </form>
-      <div className="w- h-3 flex items-center justify-center gap-2">
+      <div className="flex items-center justify-center flex-wrap gap-2">
         {debouncedNameInputValue ? (
           <Button
             variant="secondary"

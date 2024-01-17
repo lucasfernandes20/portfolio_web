@@ -1,26 +1,36 @@
 'use client';
 
+import { useGlobalContext } from '@/app/context/store';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';
+interface HeaderNavigatorProps {
+  className?: React.ComponentProps<'div'>['className'];
+}
 
-export function HeaderNavigator() {
+export function HeaderNavigator({ className }: HeaderNavigatorProps) {
+  const { setOpenDrawer } = useGlobalContext();
   const route = useRouter();
   const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
     if (pathname === '/') {
       route.push('/');
-      const targetSection = document.querySelector('#' + sectionId);
-      targetSection?.scrollIntoView({ behavior: 'smooth' });
     } else {
       route.push(`/#${sectionId}`);
-      const targetSection = document.querySelector('#' + sectionId);
-      targetSection?.scrollIntoView({ behavior: 'smooth' });
     }
+    setOpenDrawer(false);
+    const targetSection = document.querySelector('#' + sectionId);
+    targetSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <ul className="hidden tablet:flex gap-2 text-muted-foreground">
+    <ul
+      className={cn(
+        'flex flex-col tablet:flex-row gap-2 text-muted-foreground',
+        className
+      )}
+    >
       <li>
         <Button
           variant="ghost"

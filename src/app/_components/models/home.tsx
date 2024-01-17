@@ -25,6 +25,26 @@ export function HomeModel() {
   return (
     <>
       <ScrollPageSection id="first_section">
+        <svg className="pointer-events-none absolute inset-0 h-full w-full stroke-gray-400 dark:stroke-muted-foreground opacity-30 [mask-image:radial-gradient(100%_70%_at_top_center,white,transparent)]">
+          <defs>
+            <pattern
+              id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+              width="200"
+              height="200"
+              x="50%"
+              y="-1"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none"></path>
+            </pattern>
+          </defs>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth="0"
+            fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+          ></rect>
+        </svg>
         <div className="w-full z-30">
           <div className="w-full flex flex-col text-center items-center justify-center">
             <ThemeSwitcher />
@@ -46,10 +66,11 @@ export function HomeModel() {
               />
             </h6>
             <p className="w-full text-secondary-foreground/80 text-center z-30 pt-24 laptop:w-1/2 laptop:text-lg">
-              {`With ${totalTimeAsDev} of experience as a web developer, I excel
-              in JavaScript, mastering key frameworks for both front-end and
-              back-end development. Explore my portfolio to see how my expertise
-              can enhance your projects.`}
+              {`With ${totalTimeAsDev} `} of experience as a web developer, I
+              excel in JavaScript, mastering key frameworks for both{' '}
+              <span className="text-primary">front-end and back-end </span>
+              development. Explore my portfolio to see how my expertise can
+              enhance your projects.
             </p>
           </div>
           <GradientBall />

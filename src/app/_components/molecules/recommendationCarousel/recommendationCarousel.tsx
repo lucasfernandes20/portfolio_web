@@ -19,7 +19,7 @@ export function RecommendationCarousel() {
         className="w-full"
       >
         <CarouselContent className="">
-          {recommendations.reverse().map((recommendation, index) => (
+          {recommendations.map((recommendation, index) => (
             <CarouselItem key={index} className="pt-2 md:basis-3/4">
               <RecommendationCard recommendation={recommendation} />
             </CarouselItem>

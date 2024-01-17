@@ -27,6 +27,10 @@ interface DataType {
   setLanguageInputValue: Dispatch<SetStateAction<string>>;
   onlyPublic: boolean;
   setOnlyPublic: Dispatch<SetStateAction<boolean>>;
+  typingNameInputValue: boolean;
+  setTypingNameInputValue: Dispatch<SetStateAction<boolean>>;
+  openDrawer: boolean;
+  setOpenDrawer: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalContext = createContext<DataType>({
@@ -37,7 +41,11 @@ const GlobalContext = createContext<DataType>({
   languageInputValue: '',
   setLanguageInputValue: () => '',
   onlyPublic: true,
-  setOnlyPublic: () => true
+  setOnlyPublic: () => true,
+  typingNameInputValue: false,
+  setTypingNameInputValue: () => false,
+  openDrawer: false,
+  setOpenDrawer: () => false
 });
 
 export function GlobalContextProvider({
@@ -47,9 +55,12 @@ export function GlobalContextProvider({
 }) {
   const [selectedRepository, setSelectedRepository] =
     useState<ListUserReposResponseWithIcon | null>(null);
+  const [typingNameInputValue, setTypingNameInputValue] =
+    useState<boolean>(false);
   const [debouncedNameInputValue, setDebouncedNameInputValue] = useState('');
   const [languageInputValue, setLanguageInputValue] = useState('');
   const [onlyPublic, setOnlyPublic] = useState(true);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -61,7 +72,11 @@ export function GlobalContextProvider({
         languageInputValue,
         setLanguageInputValue,
         onlyPublic,
-        setOnlyPublic
+        setOnlyPublic,
+        typingNameInputValue,
+        setTypingNameInputValue,
+        openDrawer,
+        setOpenDrawer
       }}
     >
       {children}
