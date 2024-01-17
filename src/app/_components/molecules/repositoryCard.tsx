@@ -48,9 +48,11 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
         </Button>
       </CardHeader>
       <CardFooter className="gap-2">
-        <Badge variant="secondary" className="cursor-pointer">
-          {repository.language}
-        </Badge>
+        {repository.language ? (
+          <Badge variant="secondary" className="cursor-pointer">
+            {repository.language}
+          </Badge>
+        ) : null}
       </CardFooter>
     </Card>
   );

@@ -1,9 +1,22 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function HeaderNavigator() {
+  const route = useRouter();
+  const pathname = usePathname();
+
   const scrollToSection = (sectionId: string) => {
-    const targetSection = document.querySelector('#' + sectionId);
-    targetSection?.scrollIntoView({ behavior: 'smooth' });
+    if (pathname === '/') {
+      route.push('/');
+      const targetSection = document.querySelector('#' + sectionId);
+      targetSection?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      route.push(`/#${sectionId}`);
+      const targetSection = document.querySelector('#' + sectionId);
+      targetSection?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

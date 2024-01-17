@@ -1,7 +1,6 @@
 'use client';
 
 import TypewriterComponent from 'typewriter-effect';
-import { Header } from '../organisms/header';
 import { ThemeSwitcher } from '../organisms/themeSwitcher';
 import { ScrollPageSection } from '@/app/assets/scrollpage';
 import { GradientBall } from '../molecules/gradientBall';
@@ -25,7 +24,6 @@ export function HomeModel() {
 
   return (
     <>
-      <Header />
       <ScrollPageSection id="first_section">
         <div className="w-full z-30">
           <div className="w-full flex flex-col text-center items-center justify-center">
@@ -64,7 +62,7 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
-        <div>
+        <div className="w-full">
           <RepositoryDialog />
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2 mb-7">

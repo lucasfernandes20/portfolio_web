@@ -1,10 +1,12 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { AlignRight } from 'lucide-react';
 import { HeaderNavigator } from '../molecules/headerNavigator';
 
 export function Header() {
   return (
-    <header className="w-full fixed m-auto left-0 top-0 z-40">
+    <header className="w-full bg-background/20 backdrop-blur-md fixed m-auto left-0 top-0 z-40">
       <div className="w-full flex items-center justify-between container py-2">
         <h1 className="text-3xl tablet:text-6xl blod font-extrabold text-primary">
           Portfolio

@@ -21,11 +21,23 @@ interface DataType {
   setSelectedRepository: Dispatch<
     SetStateAction<ListUserReposResponseWithIcon | null>
   >;
+  debouncedNameInputValue: string;
+  setDebouncedNameInputValue: Dispatch<SetStateAction<string>>;
+  languageInputValue: string;
+  setLanguageInputValue: Dispatch<SetStateAction<string>>;
+  onlyPublic: boolean;
+  setOnlyPublic: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalContext = createContext<DataType>({
   selectedRepository: null,
-  setSelectedRepository: () => null
+  setSelectedRepository: () => null,
+  debouncedNameInputValue: '',
+  setDebouncedNameInputValue: () => '',
+  languageInputValue: '',
+  setLanguageInputValue: () => '',
+  onlyPublic: true,
+  setOnlyPublic: () => true
 });
 
 export function GlobalContextProvider({
@@ -35,10 +47,22 @@ export function GlobalContextProvider({
 }) {
   const [selectedRepository, setSelectedRepository] =
     useState<ListUserReposResponseWithIcon | null>(null);
+  const [debouncedNameInputValue, setDebouncedNameInputValue] = useState('');
+  const [languageInputValue, setLanguageInputValue] = useState('');
+  const [onlyPublic, setOnlyPublic] = useState(true);
 
   return (
     <GlobalContext.Provider
-      value={{ selectedRepository, setSelectedRepository }}
+      value={{
+        selectedRepository,
+        setSelectedRepository,
+        debouncedNameInputValue,
+        setDebouncedNameInputValue,
+        languageInputValue,
+        setLanguageInputValue,
+        onlyPublic,
+        setOnlyPublic
+      }}
     >
       {children}
     </GlobalContext.Provider>

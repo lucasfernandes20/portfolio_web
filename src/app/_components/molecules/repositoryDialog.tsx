@@ -10,17 +10,26 @@ import {
 } from '@/components/ui/dialog';
 import { ArrowUpRightSquare } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export function RepositoryDialog() {
-  const { selectedRepository, setSelectedRepository } = useGlobalContext();
+  const { selectedRepository, setSelectedRepository, setLanguageInputValue } =
+    useGlobalContext();
+  const route = useRouter();
+
   if (!selectedRepository) return;
+
+  const onSelectLanguage = () => {
+    setLanguageInputValue(selectedRepository.language);
+    setSelectedRepository(null);
+    route.push('/repositories');
+  };
 
   const onCLose = (open: boolean) => {
     if (!open) {
       setSelectedRepository(null);
     }
   };
-  console.log(selectedRepository);
 
   return (
     <Dialog open={!!selectedRepository} onOpenChange={onCLose}>
@@ -49,9 +58,15 @@ export function RepositoryDialog() {
         </div>
         <DialogFooter>
           <div className="w-full flex items-start justify-between gap-4">
-            <Badge variant="secondary" className="cursor-pointer">
-              {selectedRepository.language}
-            </Badge>
+            {selectedRepository.language ? (
+              <Badge
+                variant="secondary"
+                className="cursor-pointer"
+                onClick={onSelectLanguage}
+              >
+                {selectedRepository.language}
+              </Badge>
+            ) : null}
             <Button
               variant="default"
               size="sm"
