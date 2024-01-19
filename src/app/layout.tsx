@@ -3,6 +3,7 @@ import './globals.css';
 import { Providers } from './providers';
 import { fonts } from './fonts';
 import { Header } from './_components/organisms/header';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Lucas portfolio',
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Providers attribute="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
