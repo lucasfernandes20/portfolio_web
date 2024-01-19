@@ -28,11 +28,14 @@ module.exports = {
       tablet: '768px',
       // => @media (min-width: 768px) { ... }
 
-      laptop: '1024px',
+      laptop: '1040px',
       // => @media (min-width: 1024px) { ... }
 
       desktop: '1400px',
       // => @media (min-width: 1400px) { ... }
+
+      tall: { raw: '(min-height: 800px)' },
+      // => @media (min-height: 800px) { ... }
 
       ...defaultTheme.screens
     },

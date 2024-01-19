@@ -8,16 +8,24 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter, CardHeader } from '@/components/ui/card';
 import { BookCheck, MoveDiagonal } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface RepositoryCardProps {
   repository: ListUserReposResponseWithIcon;
 }
 
 export function RepositoryCard({ repository }: RepositoryCardProps) {
-  const { setSelectedRepository } = useGlobalContext();
+  const { setSelectedRepository, setLanguageInputValue } = useGlobalContext();
+  const route = useRouter();
 
   const selectRepo = () => {
     setSelectedRepository(repository);
+  };
+
+  const onSelectLanguage = () => {
+    setLanguageInputValue(repository.language);
+    setSelectedRepository(null);
+    route.push('/repositories');
   };
 
   return (
@@ -49,7 +57,11 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
       </CardHeader>
       <CardFooter className="gap-2">
         {repository.language ? (
-          <Badge variant="secondary" className="cursor-pointer">
+          <Badge
+            variant="secondary"
+            className="cursor-pointer"
+            onClick={onSelectLanguage}
+          >
             {repository.language}
           </Badge>
         ) : null}

@@ -12,6 +12,7 @@ import { RepositoriesList } from '../organisms/repositoriesList';
 import { Github } from 'lucide-react';
 import { RepositoryDialog } from '../molecules/repositoryDialog';
 import Link from 'next/link';
+import { ContactForm } from '../organisms/contactForm';
 
 export function HomeModel() {
   const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>();
@@ -45,7 +46,7 @@ export function HomeModel() {
             fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
           ></rect>
         </svg>
-        <div className="w-full z-30">
+        <div className="w-full z-30 relative">
           <div className="w-full flex flex-col text-center items-center justify-center">
             <ThemeSwitcher />
             <h1 className="text-5xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
@@ -77,6 +78,26 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="second_section">
+        <svg className="pointer-events-none absolute inset-0 h-full w-full stroke-gray-400 dark:stroke-muted-foreground opacity-30 [mask-image:radial-gradient(60%_60%_at_center,white,transparent)]">
+          <defs>
+            <pattern
+              id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+              width="200"
+              height="200"
+              x="50%"
+              y="-1"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none"></path>
+            </pattern>
+          </defs>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth="0"
+            fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+          ></rect>
+        </svg>
         <div className="w-full flex flex-col laptop:flex-row items-center justify-between gap-16">
           <RecommendationSection />
           <AboutMe />
@@ -85,8 +106,8 @@ export function HomeModel() {
       <ScrollPageSection id="third_section">
         <div className="w-full">
           <RepositoryDialog />
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2 mb-7">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2">
               <Github />
               Github repositories
             </h2>
@@ -98,6 +119,16 @@ export function HomeModel() {
             </Link>
           </div>
           <RepositoriesList />
+        </div>
+      </ScrollPageSection>
+      <ScrollPageSection id="forth_section">
+        <div className="w-full">
+          <aside className="w-full tablet:w-1/2">
+            <h2 className="text-muted-foreground text-xl font-bold mb-6">
+              Send me a email:
+            </h2>
+            <ContactForm />
+          </aside>
         </div>
       </ScrollPageSection>
     </>

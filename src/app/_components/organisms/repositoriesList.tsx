@@ -38,7 +38,7 @@ export function RepositoriesList() {
   };
 
   return (
-    <div className="w-full flex flex-col tablet:grid tablet:auto-cols-max tablet:grid-cols-3 gap-3">
+    <div className="[&>*:nth-child(n)]:hidden [&>:nth-child(-n+3)]:flex tablet:[&>*:nth-child(n)]:flex w-full flex flex-col tablet:grid tablet:auto-cols-max tablet:grid-cols-3 gap-3">
       {repositories.loading
         ? Array.from(Array(9)).map((_, index) => (
             <Skeleton key={index} className="h-36 rounded-xl" />

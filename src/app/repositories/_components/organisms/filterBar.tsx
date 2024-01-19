@@ -62,7 +62,7 @@ export function FilterBar() {
             value={languageInputValue}
           >
             <SelectTrigger className="w-full tablet:w-[180px]">
-              <SelectValue placeholder="language" />
+              <SelectValue placeholder="Language" />
             </SelectTrigger>
             <SelectContent>
               {languages.map((lang) => (
@@ -84,7 +84,7 @@ export function FilterBar() {
               setOnlyPublic(target as boolean);
             }}
           />
-          only public
+          Public only
         </Label>
       </form>
       <div className="flex items-center justify-center flex-wrap gap-2">
