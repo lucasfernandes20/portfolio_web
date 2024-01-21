@@ -44,21 +44,22 @@ export function ContactForm() {
 
       if (messageSender.ok) {
         toast({
-          title: 'succecss',
-          description: 'succecss description',
+          title: 'Succecss',
+          description: 'email sent!',
           variant: 'default'
         });
+        form.current.reset();
       } else {
         toast({
-          title: 'error',
-          description: 'error description',
+          title: 'Error',
+          description: 'error sending email',
           variant: 'destructive'
         });
       }
     } catch (err) {
       toast({
-        title: 'error',
-        description: 'error description',
+        title: 'Error',
+        description: 'error sending email',
         variant: 'destructive'
       });
     } finally {
@@ -72,8 +73,8 @@ export function ContactForm() {
       className="w-full flex flex-col gap-2"
       onSubmit={sendEmail}
     >
-      <TextInput name="sender_name" placeholder="Your name*" />
-      <EmailInput name="sender_email" placeholder="Your email*" />
+      <TextInput name="sender_name" placeholder="Your name*" required />
+      <EmailInput name="sender_email" placeholder="Your email*" required />
       <Label className="relative pb-[1rem]">
         <Textarea
           name="message"
