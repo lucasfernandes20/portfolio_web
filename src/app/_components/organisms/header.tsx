@@ -5,11 +5,23 @@ import { AlignRight } from 'lucide-react';
 import { HeaderNavigator } from '../molecules/headerNavigator';
 import { Drawer } from './drawer';
 import { useGlobalContext } from '@/app/context/store';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function Header() {
   const { setOpenDrawer } = useGlobalContext();
   const route = useRouter();
+  const pathname = usePathname();
+
+  const scrollToSection = (sectionId: string) => {
+    if (pathname === '/') {
+      route.push('/');
+    } else {
+      route.push(`/#${sectionId}`);
+    }
+    setOpenDrawer(false);
+    const targetSection = document.querySelector('#' + sectionId);
+    targetSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <header className="w-full fixed m-auto left-0 top-0 z-40">
@@ -34,6 +46,7 @@ export function Header() {
           variant="default"
           size="default"
           className="hidden laptop:block p-2 py-0"
+          onClick={() => scrollToSection('contact_section')}
         >
           <p className="text-base text-primary-foreground">Contact me</p>
         </Button>

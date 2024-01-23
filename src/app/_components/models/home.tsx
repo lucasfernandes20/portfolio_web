@@ -8,10 +8,9 @@ import { Github } from 'lucide-react';
 import { RepositoryDialog } from '../molecules/repositoryDialog';
 import Link from 'next/link';
 import { ContactForm } from '../organisms/contactForm';
-import { FloatingDiv } from '../molecules/floatingDiv';
-import { RiJavascriptFill } from 'react-icons/ri';
 import { ContactMeAside } from '../organisms/contactMeAside';
 import { Presentation } from '../organisms/presentation';
+import { InfiniteKnowledgeCarousel } from '../organisms/infiniteKnowledgeCarousel';
 
 export function HomeModel() {
   return (
@@ -49,21 +48,22 @@ export function HomeModel() {
         <div className="w-full">
           <RepositoryDialog />
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-muted-foreground flex items-center gap-2">
+            <h2 className="text-lg tablet:text-2xl font-bold text-muted-foreground flex items-center gap-2">
               <Github />
               Github repositories
             </h2>
             <Link
-              className="underline cursor-pointer text-muted-foreground"
+              className="underline cursor-pointer text-muted-foreground text-xs tablet:text-base"
               href="/repositories"
             >
               see all
             </Link>
           </div>
           <RepositoriesList />
+          <InfiniteKnowledgeCarousel />
         </div>
       </ScrollPageSection>
-      <ScrollPageSection id="forth_section">
+      <ScrollPageSection id="contact_section">
         <div className="w-full flex flex-col items-center justify-between gap-4 tablet:flex-row tablet:gap-12">
           <div className="w-full tablet:w-1/2">
             <h2 className="text-muted-foreground text-xl font-bold mb-6">
@@ -72,13 +72,6 @@ export function HomeModel() {
             <ContactForm />
           </div>
           <ContactMeAside />
-        </div>
-      </ScrollPageSection>
-      <ScrollPageSection id="fifth_section">
-        <div className="w-full px-11 grid grid-cols-6 [transform:rotateX(51deg)_rotateZ(23deg)] [transform-style:preserve-3d] gap-4 ">
-          <FloatingDiv>
-            <RiJavascriptFill className="w-full h-full [color:#f7df1e]" />
-          </FloatingDiv>
         </div>
       </ScrollPageSection>
     </>

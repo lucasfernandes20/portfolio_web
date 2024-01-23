@@ -70,7 +70,7 @@ export function ContactForm() {
   return (
     <form
       ref={form}
-      className="w-full flex flex-col gap-2"
+      className="w-full flex flex-col tablet:gap-2"
       onSubmit={sendEmail}
     >
       <TextInput name="sender_name" placeholder="Your name*" required />

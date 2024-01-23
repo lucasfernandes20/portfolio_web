@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: 'Lucas Fernandes web portfolio',
   keywords: [
     'Development',
+    'Portfolio',
+    'web portfolio',
+    'web developer',
     'Developer',
     'Javascript',
     'Typescript',
@@ -24,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={fonts.poppins.className}>
         <Providers attribute="class" defaultTheme="system" enableSystem>
           <Header />

@@ -6,7 +6,7 @@ export function AboutMe() {
           Hello, {` I'm `} a dedicated web developer, specializing in Javascript
           and leading frameworks. My experience includes coding for a B2B food
           service marketplace, addressing franchise requirements. Transitioning
-          to a B2B generative AI environment, I played a key role in
+          to a B2B generative AI environment, i played a key role in
           decision-making and front-end coding, enhancing company outcomes.
         </span>
         <br />

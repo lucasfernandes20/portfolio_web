@@ -1,36 +1,69 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip';
 import Link from 'next/link';
-import { SiLinkedin } from 'react-icons/si';
-import { GradientBall } from '../molecules/gradientBall';
+import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 export function ContactMeAside() {
   return (
-    <aside className="relative h-1/2 w-full tablet:w-1/2">
-      <Card className="w-full tablet:w-fit z-50">
-        <CardHeader>
-          <h2 className="text-primary font-bold text-lg flex items-center gap-3">
-            <img
-              src="./profile_pic.jpg"
-              alt="profile picture"
-              className="w-9 aspect-square rounded-full"
-            />
-            Or contact me on
+    <aside className="h-auto max-h-1/2 tablet:h-full flex items-center justify-center w-full tablet:w-1/2 relative">
+      <Card className="w-full">
+        <CardHeader className="flex-row gap-4 items-center">
+          <img
+            src="images/profile_full.png"
+            className="w-12 aspect-square object-cover rounded-2xl object-center"
+          />
+          <h2 className="text-lg font-bold text-muted-foreground">
+            Or find me on:
           </h2>
         </CardHeader>
         <CardContent>
-          <Link
-            href="https://www.linkedin.com/in/lucasfernandesreis"
-            target="_blank"
-          >
-            <Button variant="secondary" size="sm" className="w-full">
-              <SiLinkedin className="mr-2" />
-              LinkedIn
-            </Button>
-          </Link>
+          <div className="w-full flex gap-2">
+            <TooltipProvider>
+              <Tooltip delayDuration={100}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="https://www.linkedin.com/in/lucasfernandesreis/"
+                    target="_blank"
+                    className="flex-grow"
+                  >
+                    <Button variant="secondary" className="w-full">
+                      <FaLinkedin className="h-full text-muted-foreground" />
+                    </Button>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Linkedin</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip delayDuration={100}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="https://wa.link/v4p3lf"
+                    target="_blank"
+                    className="flex-grow"
+                  >
+                    <Button variant="secondary" className="w-full">
+                      <FaWhatsapp className="h-full text-muted-foreground" />
+                    </Button>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Whatsapp</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </CardContent>
       </Card>
-      <GradientBall />
     </aside>
   );
 }

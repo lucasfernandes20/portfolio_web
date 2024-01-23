@@ -65,16 +65,6 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
           </p>
         </Button>
       </li>
-      <li>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="hover:bg-inherit hover:scale-105"
-          onClick={() => scrollToSection('forth_section')}
-        >
-          <p className="text-muted-foreground text-base font-normal">stacks</p>
-        </Button>
-      </li>
     </ul>
   );
 }
