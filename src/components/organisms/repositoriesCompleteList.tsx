@@ -8,7 +8,7 @@ import {
 } from '@/app/context/store';
 import addLanguageIcon from '@/app/utils/addLanguageIcon';
 import { Skeleton } from '@/components/ui/skeleton';
-import { RepositoryCard } from '@/app/_components/molecules/repositoryCard';
+import { RepositoryCard } from '../molecules/repositoryCard';
 
 const REPO_INITIAL_STATE = { data: [], loading: true, error: false };
 
@@ -25,10 +25,6 @@ export function RepositoriesList() {
     error: boolean;
     loading: boolean;
   }>(REPO_INITIAL_STATE);
-
-  useEffect(() => {
-    getRepositories();
-  }, [debouncedNameInputValue, languageInputValue, onlyPublic]);
 
   const filterRepositories = (
     repos: ListUserReposResponseWithIcon[]
@@ -81,6 +77,11 @@ export function RepositoriesList() {
       setRepositories((prev) => ({ ...prev, loading: false }));
     }
   };
+
+  useEffect(() => {
+    getRepositories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedNameInputValue, languageInputValue, onlyPublic]);
 
   return (
     <div className="w-full pt-6 flex flex-col tablet:grid tablet:auto-cols-max tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-3">

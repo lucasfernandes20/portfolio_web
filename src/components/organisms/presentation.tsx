@@ -4,7 +4,7 @@ import TypewriterComponent from 'typewriter-effect';
 import { ThemeSwitcher } from './themeSwitcher';
 import { useEffect, useState } from 'react';
 import countYearFromDate from '@/app/utils/countYearsFromDate';
-import { socialMediaList } from '@/app/assets/socialMedia';
+import { socialMediaList } from '@/data/socialMedia';
 import { GradientBall } from '../molecules/gradientBall';
 import {
   Tooltip,

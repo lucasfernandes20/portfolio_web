@@ -6,8 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import recommendations from './recommendations.json';
-import { RecommendationCard } from '../recommendationCard';
+import recommendations from '@/data/recommendations.json';
+import { RecommendationCard } from './recommendationCard';
 
 export function RecommendationCarousel() {
   return (

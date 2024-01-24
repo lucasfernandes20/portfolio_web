@@ -1,5 +1,3 @@
-'use client';
-
 import { BiLogoTypescript } from 'react-icons/bi';
 import { RiJavascriptFill } from 'react-icons/ri';
 import { GrMysql } from 'react-icons/gr';

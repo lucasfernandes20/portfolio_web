@@ -1,6 +1,6 @@
-import { RepositoryDialog } from '@/app/_components/molecules/repositoryDialog';
 import { FilterBar } from '../organisms/filterBar';
-import { RepositoriesList } from '../organisms/repositoriesList';
+import { RepositoriesList } from '../organisms/repositoriesCompleteList';
+import { RepositoryDialog } from '../molecules/repositoryDialog';
 
 export function RepositoriesModel() {
   return (

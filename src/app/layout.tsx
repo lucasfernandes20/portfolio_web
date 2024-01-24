@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from './providers';
 import { fonts } from './fonts';
-import { Header } from './_components/organisms/header';
 import { Toaster } from '@/components/ui/toaster';
+import { Header } from '@/components/organisms/header';
 
 export const metadata: Metadata = {
   title: 'Lucas portfolio',

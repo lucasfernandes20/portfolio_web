@@ -20,7 +20,7 @@ export function RepositoryDialog() {
   if (!selectedRepository) return;
 
   const onSelectLanguage = () => {
-    setLanguageInputValue(selectedRepository.language);
+    setLanguageInputValue(selectedRepository.language || '');
     setSelectedRepository(null);
     route.push('/repositories');
   };

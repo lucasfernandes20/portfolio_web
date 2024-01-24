@@ -1,6 +1,6 @@
 'use client';
 
-import { RepositoriesModel } from './_components/models/repositories';
+import { RepositoriesModel } from '../../components/models/repositories';
 
 export default function Repositories() {
   return (

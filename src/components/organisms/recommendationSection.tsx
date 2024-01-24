@@ -1,5 +1,5 @@
 import { Card, CardFooter, CardHeader } from '@/components/ui/card';
-import { RecommendationCarousel } from '../molecules/recommendationCarousel/recommendationCarousel';
+import { RecommendationCarousel } from '../molecules/recommendationCarousel';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRightSquare, Star } from 'lucide-react';
 import Link from 'next/link';

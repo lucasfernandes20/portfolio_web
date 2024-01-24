@@ -1,4 +1,4 @@
-import { knowledgeList } from '@/app/assets/knowledge';
+import { knowledgeList } from '@/data/knowledge';
 import Autoplay from 'embla-carousel-autoplay';
 import { Card } from '@/components/ui/card';
 import {

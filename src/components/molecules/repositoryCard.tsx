@@ -23,7 +23,7 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
   };
 
   const onSelectLanguage = () => {
-    setLanguageInputValue(repository.language);
+    setLanguageInputValue(repository.language || '');
     setSelectedRepository(null);
     route.push('/repositories');
   };

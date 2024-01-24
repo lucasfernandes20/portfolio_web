@@ -40,7 +40,7 @@ export function FilterBar() {
       setTypingNameInputValue(false);
     }, 500);
     return () => clearTimeout(timeoutId);
-  }, [nameInputValue, setDebouncedNameInputValue]);
+  }, [nameInputValue, setDebouncedNameInputValue, setTypingNameInputValue]);
 
   return (
     <div className="w-full h-52 flex flex-col gap-2">

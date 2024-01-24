@@ -1,6 +1,6 @@
 'use client';
 
-import { HomeModel } from '@/app/_components/models/home';
+import { HomeModel } from '@/components/models/home';
 
 export default function Home() {
   return (
