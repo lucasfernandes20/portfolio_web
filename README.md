@@ -20,11 +20,15 @@ The portfolio is responsive for desktop, tablet, and mobile devices. The pages a
 ```
 npm install
 ```
+
 or
+
 ```
 yarn
 ```
+
 then
+
 ```
 npm run dev
 ```
@@ -44,13 +48,11 @@ npm run dev
 Desktop:<br>
 ![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/0b4211ae-9eaa-4e63-a4cd-93857aa4f2d0)
 
-
 Tablet:<br>
 ![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/9ff61d4c-cce7-4dff-bed5-a17bf896fd74)
 
 Mobile:<br>
 ![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/5c09f5cc-728d-4f8e-9cc8-95b801f99662)
-
 
 # Author
 
@@ -61,7 +63,6 @@ Hello, I'm Lucas Fernandes, a dedicated Full Stack Developer. I specialize in cr
 - **Email:** [lucas.h.fernandes.reis@gmail.com](mailto:lucas.h.fernandes.reis@gmail.com)
 - **LinkedIn:** [Lucas Fernandes on Linkedin](https://www.linkedin.com/in/lucasfernandesreis/)
 - **GitHub:** [Lucas Fernandes on GitHub](https://github.com/lucasfernandes20)
-- **Portfolio:** incoming
+- **Portfolio:** [Lucas Fernandes Web Portfolio](https://kukkadev.tech)
 
 Feel free to reach out if you have any questions, project inquiries, or just want to connect. Let's build something amazing together!
-
