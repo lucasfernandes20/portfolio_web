@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lucas Fernandes Web Portfolio
 
-## Getting Started
+![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/667f0517-9c6d-4844-b82f-a2c610816065)
 
-First, run the development server:
+This portfolio was created to update my previous one, as it was becoming outdated in terms of my skills. It also served as a testing ground for some aspects of the new NextJS-14 structure.
 
-```bash
+## Features
+
+- Get to know Lucas briefly.
+- Read feedback from people who have worked with Lucas.
+- Explore some of Lucas GitHub projects.
+- Contact Lucas by email.
+
+## Responsive Design
+
+The portfolio is responsive for desktop, tablet, and mobile devices. The pages are organized with snap-scroll for a smooth navigation experience.
+
+## Installation and run
+
+```
+npm install
+```
+or
+```
+yarn
+```
+then
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- GitHub API: Used to fetch data from Lucas's GitHub repositories.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tech Stack
 
-## Learn More
+- NextJS v14 with TypeScript.
+- Styling with Tailwind CSS and some components from shad/cn.
+- nodemailer for sending emails using a Next API route.
 
-To learn more about Next.js, take a look at the following resources:
+## Screenshots or Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Desktop:<br>
+![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/0b4211ae-9eaa-4e63-a4cd-93857aa4f2d0)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+Tablet:<br>
+![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/9ff61d4c-cce7-4dff-bed5-a17bf896fd74)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mobile:<br>
+![image](https://github.com/lucasfernandes20/portfolio_web/assets/82236429/5c09f5cc-728d-4f8e-9cc8-95b801f99662)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Author
+
+Hello, I'm Lucas Fernandes, a dedicated Full Stack Developer. I specialize in creating web applications with a focus on delivering efficient and scalable solutions. This portfolio reflects my dedication to staying current with the latest technologies and showcases my recent projects.
+
+## Contact Information
+
+- **Email:** [lucas.h.fernandes.reis@gmail.com](mailto:lucas.h.fernandes.reis@gmail.com)
+- **LinkedIn:** [Lucas Fernandes on Linkedin](https://www.linkedin.com/in/lucasfernandesreis/)
+- **GitHub:** [Lucas Fernandes on GitHub](https://github.com/lucasfernandes20)
+- **Portfolio:** incoming
+
+Feel free to reach out if you have any questions, project inquiries, or just want to connect. Let's build something amazing together!
+
