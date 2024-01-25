@@ -44,7 +44,7 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
-        <div className="w-full">
+        <div className="w-full relative">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg tablet:text-2xl font-bold text-muted-foreground flex items-center gap-2">
               <Github />

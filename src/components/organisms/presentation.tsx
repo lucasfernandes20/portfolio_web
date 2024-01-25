@@ -47,7 +47,7 @@ export function Presentation() {
       <div className="w-full z-30 relative">
         <div className="w-full flex flex-col text-center items-center justify-center">
           <ThemeSwitcher />
-          <h1 className="text-3xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
+          <h1 className="text-4xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
             {`Hi, I'm `}
             <span className="text-primary">Lucas Fernandes</span>
           </h1>

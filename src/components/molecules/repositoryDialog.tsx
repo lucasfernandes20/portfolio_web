@@ -26,7 +26,7 @@ export function RepositoryDialog() {
   };
 
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader className="flex flex-row items-start justify-between gap-2 py-3">
         <motion.div
           layoutId={`header-${selectedRepository.id}`}

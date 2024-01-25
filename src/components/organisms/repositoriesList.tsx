@@ -66,16 +66,14 @@ export function RepositoriesList() {
       )}
       <AnimatePresence mode="popLayout">
         {selectedRepository?.id && (
-          <>
-            <motion.div
-              key="modal"
-              className="absolute z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop:bg-black"
-            >
-              <motion.div layoutId={`${selectedRepository.id}`}>
-                <RepositoryDialog />
-              </motion.div>
+          <motion.div
+            key="modal"
+            className="absolute w-full max-w-[790px] z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop:bg-black"
+          >
+            <motion.div layoutId={`${selectedRepository.id}`}>
+              <RepositoryDialog />
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </LayoutGroup>
