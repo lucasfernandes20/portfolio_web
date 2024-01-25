@@ -28,20 +28,20 @@ export function InfiniteKnowledgeCarousel() {
       onMouseEnter={() => plugin.current.stop()}
       onMouseLeave={() => plugin.current.play()}
     >
-      <CarouselContent className="pt-10 pb-4">
+      <CarouselContent className="pt-4 tablet:pt-10">
         {knowledgeList.map((knowledge) => (
           <CarouselItem key={knowledge.name} className="basis-auto">
             <TooltipProvider>
               <Tooltip delayDuration={100}>
                 <TooltipTrigger asChild>
-                  <Card className="p-3 hover:bg-muted-foreground/10">
+                  <Card className="p-1 tablet:p-3 laptop:hover:bg-muted-foreground/10">
                     <knowledge.icon
                       color={
                         currentTheme === 'dark'
                           ? knowledge.darkColor
                           : knowledge.color
                       }
-                      className={`w-[50px] laptop:w-[80px] h-auto hover:[color:${knowledge.color}] dark:[color:${knowledge.darkColor}]`}
+                      className={`w-[40px] h-auto laptop:w-[80px]`}
                     />
                   </Card>
                 </TooltipTrigger>

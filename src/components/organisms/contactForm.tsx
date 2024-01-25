@@ -3,12 +3,14 @@
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { EmailInput } from '../molecules/emailInput';
 import { TextInput } from '../molecules/textInput';
 import { useToast } from '@/components/ui/use-toast';
 import { LoaderIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BiCheckCircle } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 
 type FormData = {
   name: string;
@@ -21,6 +23,7 @@ export function ContactForm() {
   const { toast } = useToast();
 
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -49,6 +52,7 @@ export function ContactForm() {
           variant: 'default'
         });
         form.current.reset();
+        setSuccess(true);
       } else {
         toast({
           title: 'Error',
@@ -67,6 +71,15 @@ export function ContactForm() {
     }
   };
 
+  useEffect(() => {
+    console.log(success);
+    if (success) {
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
+    }
+  }, [success]);
+
   return (
     <form
       ref={form}
@@ -84,14 +97,35 @@ export function ContactForm() {
           placeholder="Message..."
         />
       </Label>
-      <Button variant="default" size="sm" className="w-full" type="submit">
-        <LoaderIcon
-          className={cn(
-            'mr-2 h-4 w-4 animate-spin',
-            loading ? 'inline-block' : 'hidden'
-          )}
-        />
-        Submit
+      <Button
+        variant="default"
+        size="sm"
+        className={`w-full ${success ? 'bg-green-700 hover:bg-green-700' : ''}`}
+        type="submit"
+      >
+        {success ? (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 360, scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20
+            }}
+          >
+            <BiCheckCircle className="text-3xl" />
+          </motion.div>
+        ) : (
+          <>
+            <LoaderIcon
+              className={cn(
+                'mr-2 h-4 w-4 animate-spin',
+                loading ? 'inline-block' : 'hidden'
+              )}
+            />
+            Submit
+          </>
+        )}
       </Button>
     </form>
   );

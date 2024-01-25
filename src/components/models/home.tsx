@@ -5,7 +5,6 @@ import { AboutMe } from '../molecules/aboutMe';
 import { RecommendationSection } from '../organisms/recommendationSection';
 import { RepositoriesList } from '../organisms/repositoriesList';
 import { Github } from 'lucide-react';
-import { RepositoryDialog } from '../molecules/repositoryDialog';
 import Link from 'next/link';
 import { ContactForm } from '../organisms/contactForm';
 import { ContactMeAside } from '../organisms/contactMeAside';
@@ -46,7 +45,6 @@ export function HomeModel() {
       </ScrollPageSection>
       <ScrollPageSection id="third_section">
         <div className="w-full">
-          <RepositoryDialog />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg tablet:text-2xl font-bold text-muted-foreground flex items-center gap-2">
               <Github />

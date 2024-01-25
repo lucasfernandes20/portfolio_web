@@ -28,7 +28,7 @@ export function Header() {
       <Drawer />
       <div className="w-full flex items-center justify-between container py-2">
         <h1
-          className="text-3xl tablet:text-6xl blod font-extrabold text-primary cursor-pointer"
+          className="text-3xl tablet:text-6xl blod font-extrabold text-primary cursor-pointer select-none"
           onClick={() => route.push('/#first_section')}
         >
           Portfolio

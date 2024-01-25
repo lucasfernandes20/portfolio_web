@@ -47,11 +47,11 @@ export function Presentation() {
       <div className="w-full z-30 relative">
         <div className="w-full flex flex-col text-center items-center justify-center">
           <ThemeSwitcher />
-          <h1 className="text-5xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
+          <h1 className="text-3xl tablet:text-6xl laptop:text-7xl text-foreground bold font-bold z-30">
             {`Hi, I'm `}
             <span className="text-primary">Lucas Fernandes</span>
           </h1>
-          <h6 className="text-xl text-secondary-foreground laptop:text-2xl z-30">
+          <h6 className="text-base tablet:text-xl text-secondary-foreground laptop:text-2xl z-30">
             <TypewriterComponent
               options={{
                 strings: [
@@ -64,7 +64,7 @@ export function Presentation() {
               }}
             />
           </h6>
-          <p className="w-full text-secondary-foreground/80 text-center z-30 pt-4 tablet:pt-20 laptop:pt-24 laptop:w-1/2 laptop:text-lg">
+          <p className="w-full text-sm tablet:text-base text-secondary-foreground/80 text-center z-30 pt-4 tablet:pt-20 laptop:pt-24 laptop:w-1/2 laptop:text-lg">
             {`With ${totalTimeAsDev} `} of experience as a web developer, I
             excel in JavaScript, mastering key frameworks for both{' '}
             <span className="text-primary">front-end and back-end </span>

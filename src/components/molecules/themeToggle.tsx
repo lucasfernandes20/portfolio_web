@@ -20,8 +20,8 @@ export function ThemeToggle() {
           size="sm"
           className="h-6 w-6 px-0 focus:scale-100 hover:scale-100 relative"
         >
-          <Sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-muted-foreground" />
-          <Moon className="absolute rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100 text-muted-foreground" />
+          <Sun className="h-4 w-4 tablet:w-auto tablet:h-auto text-xs rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-muted-foreground" />
+          <Moon className="h-4 w-4 tablet:w-auto tablet:h-auto absolute rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100 text-muted-foreground" />
           <span className="sr-only">Toggle</span>
         </Button>
       </DropdownMenuTrigger>
