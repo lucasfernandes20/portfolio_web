@@ -119,7 +119,7 @@ export function RepositoriesList() {
         {selectedRepository?.id && (
           <motion.div
             key="repo"
-            className="absolute z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop:bg-black"
+            className="absolute w-full max-w-[790px] px-[2rem] z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop:bg-black"
           >
             <motion.div layoutId={`${selectedRepository.id}`}>
               <RepositoryDialog />
