@@ -72,7 +72,6 @@ export function ContactForm() {
   };
 
   useEffect(() => {
-    console.log(success);
     if (success) {
       setTimeout(() => {
         setSuccess(false);

@@ -11,18 +11,18 @@ import { RecommendationCard } from './recommendationCard';
 
 export function RecommendationCarousel() {
   return (
-    <div className="hidden h-full tablet:inline-block px-16 py-6 w-full">
+    <div className="hidden h-full tablet:inline-block px-16 py-6 tablet:py-0 laptop:py-6 w-full">
       <Carousel
         opts={{
           align: 'center'
         }}
         className="w-full"
       >
-        <CarouselContent className="tablet:h-[350px] laptop:h-auto">
+        <CarouselContent className="tablet:h-full laptop:h-auto">
           {recommendations.map((recommendation, index) => (
             <CarouselItem
               key={index}
-              className="md:basis-3/4 laptop:basis-full desktop:basis-5/6"
+              className="basis-full laptop:basis-5/6 desktop:basis-5/6"
             >
               <RecommendationCard recommendation={recommendation} />
             </CarouselItem>

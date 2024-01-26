@@ -38,7 +38,7 @@ export function HomeModel() {
             fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
           ></rect>
         </svg>
-        <div className="w-full flex flex-col laptop:flex-row items-center justify-between gap-16">
+        <div className="w-full flex flex-col laptop:flex-row items-center justify-between gap-5 laptop:gap-16">
           <RecommendationSection />
           <AboutMe />
         </div>

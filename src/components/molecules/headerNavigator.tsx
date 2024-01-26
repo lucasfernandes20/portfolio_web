@@ -21,7 +21,7 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
     }
     setOpenDrawer(false);
     const targetSection = document.querySelector('#' + sectionId);
-    targetSection?.scrollIntoView({ behavior: 'smooth' });
+    targetSection?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   };
 
   return (
