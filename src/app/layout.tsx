@@ -4,6 +4,7 @@ import { Providers } from './providers';
 import { fonts } from './fonts';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/organisms/header';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Lucas portfolio',
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

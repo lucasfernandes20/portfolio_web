@@ -1,6 +1,7 @@
 import { useGlobalContext } from '@/app/context/store';
 import countYearFromDate from '@/app/utils/countYearsFromDate';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
@@ -9,8 +10,9 @@ import {
   CardFooter,
   CardHeader
 } from '@/components/ui/card';
-import { BookCheck } from 'lucide-react';
+import { BookCheck, Link as LinkIcon } from 'lucide-react';
 import { RiCloseCircleLine } from 'react-icons/ri';
+import Link from 'next/link';
 
 export function RepositoryDialog() {
   const { selectedRepository, setSelectedRepository, setLanguageInputValue } =
@@ -76,7 +78,17 @@ export function RepositoryDialog() {
           </motion.p>
         </motion.div>
       </CardContent>
-      <CardFooter className="gap-2">
+      <CardFooter className="gap-2 relative">
+        <Link
+          href={selectedRepository.html_url}
+          target="_blank"
+          className="flex-grow"
+        >
+          <Button variant="outline" className="text-xs">
+            <LinkIcon className="h-full mr-2" />
+            View repository
+          </Button>
+        </Link>
         {selectedRepository.language ? (
           <Badge
             variant="secondary"
