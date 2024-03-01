@@ -7,11 +7,11 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip';
 import Link from 'next/link';
-import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 export function ContactMeAside() {
   return (
-    <aside className="h-auto max-h-1/2 tablet:h-full flex items-center justify-center w-full tablet:w-1/2 relative">
+    <aside className="w-full">
       <Card className="w-full">
         <CardHeader className="flex-row gap-4 items-center">
           <img
@@ -58,6 +58,24 @@ export function ContactMeAside() {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Whatsapp</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip delayDuration={100}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="https://github.com/lucasfernandes20"
+                    target="_blank"
+                    className="flex-grow"
+                  >
+                    <Button variant="secondary" className="w-full">
+                      <FaGithub className="h-full text-muted-foreground" />
+                    </Button>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>GitHub</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

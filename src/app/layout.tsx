@@ -18,7 +18,13 @@ export const metadata: Metadata = {
     'Javascript',
     'Typescript',
     'Font-end',
-    'Lucas Fernandes'
+    'Lucas Fernandes',
+    'Lucas Fernandes web portfolio',
+    'Portfolio web developer',
+    'front-end developer',
+    'Next.js',
+    'React',
+    'front-end portfolio'
   ]
 };
 

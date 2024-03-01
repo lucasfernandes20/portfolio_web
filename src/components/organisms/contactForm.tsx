@@ -11,6 +11,7 @@ import { LoaderIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { BiCheckCircle } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import { Card } from '@/components/ui/card';
 
 type FormData = {
   name: string;
@@ -80,52 +81,52 @@ export function ContactForm() {
   }, [success]);
 
   return (
-    <form
-      ref={form}
-      className="w-full flex flex-col tablet:gap-2"
-      onSubmit={sendEmail}
-    >
-      <TextInput name="sender_name" placeholder="Your name*" required />
-      <EmailInput name="sender_email" placeholder="Your email*" required />
-      <Label className="relative pb-[1rem]">
-        <Textarea
-          name="message"
-          required
-          className="resize-none"
-          rows={5}
-          placeholder="Message..."
-        />
-      </Label>
-      <Button
-        variant="default"
-        size="sm"
-        className={`w-full ${success ? 'bg-green-700 hover:bg-green-700' : ''}`}
-        type="submit"
-      >
-        {success ? (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ rotate: 360, scale: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 260,
-              damping: 20
-            }}
-          >
-            <BiCheckCircle className="text-3xl" />
-          </motion.div>
-        ) : (
-          <>
-            <LoaderIcon
-              className={cn(
-                'mr-2 h-4 w-4 animate-spin',
-                loading ? 'inline-block' : 'hidden'
-              )}
-            />
-            Submit
-          </>
-        )}
-      </Button>
-    </form>
+    <Card className="w-full flex flex-col p-6">
+      <form ref={form} className="w-full flex flex-col" onSubmit={sendEmail}>
+        <TextInput name="sender_name" placeholder="Your name*" required />
+        <EmailInput name="sender_email" placeholder="Your email*" required />
+        <Label className="relative pb-[1rem]">
+          <Textarea
+            name="message"
+            required
+            className="resize-none"
+            rows={5}
+            placeholder="Message..."
+          />
+        </Label>
+        <Button
+          variant="default"
+          size="sm"
+          className={`w-full ${
+            success ? 'bg-green-700 hover:bg-green-700' : ''
+          }`}
+          type="submit"
+        >
+          {success ? (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ rotate: 360, scale: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 20
+              }}
+            >
+              <BiCheckCircle className="text-3xl" />
+            </motion.div>
+          ) : (
+            <>
+              <LoaderIcon
+                className={cn(
+                  'mr-2 h-4 w-4 animate-spin',
+                  loading ? 'inline-block' : 'hidden'
+                )}
+              />
+              Submit
+            </>
+          )}
+        </Button>
+      </form>
+    </Card>
   );
 }

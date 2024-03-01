@@ -15,7 +15,7 @@ import {
 import Link from 'next/link';
 
 export function Presentation() {
-  const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>();
+  const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>('2 years');
 
   useEffect(() => {
     const initDate = new Date('2022-02-12');

@@ -62,13 +62,11 @@ export function HomeModel() {
         </div>
       </ScrollPageSection>
       <ScrollPageSection id="contact_section">
-        <div className="w-full flex flex-col items-center justify-between gap-4 tablet:flex-row tablet:gap-12">
-          <div className="w-full tablet:w-1/2">
-            <h2 className="text-muted-foreground text-xl font-bold mb-6">
-              Send me a email:
-            </h2>
-            <ContactForm />
-          </div>
+        <div className="w-full flex flex-col items-center justify-between gap-4">
+          <h2 className="text-muted-foreground text-xl font-bold mb-0 self-start desktop:mb-4">
+            Send me a email:
+          </h2>
+          <ContactForm />
           <ContactMeAside />
         </div>
       </ScrollPageSection>
