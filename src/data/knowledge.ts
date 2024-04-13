@@ -1,4 +1,4 @@
-import { BiLogoTypescript } from 'react-icons/bi';
+import { BiLogoAws, BiLogoPython, BiLogoTypescript } from 'react-icons/bi';
 import { RiJavascriptFill } from 'react-icons/ri';
 import { GrMysql } from 'react-icons/gr';
 import {
@@ -30,6 +30,18 @@ export const knowledgeList = [
     icon: BiLogoTypescript,
     color: '#3178c6',
     darkColor: '#3178c6'
+  },
+  {
+    name: 'Python',
+    icon: BiLogoPython,
+    color: '#306998',
+    darkColor: '#306998'
+  },
+  {
+    name: 'AWS',
+    icon: BiLogoAws,
+    color: '#ff9900',
+    darkColor: '#ff9900'
   },
   {
     name: 'HTML5',
@@ -104,10 +116,10 @@ export const knowledgeList = [
     darkColor: '#00b5ea'
   },
   {
-    name: 'TailwindCSS',
-    icon: SiTailwindcss,
-    color: '#38BDF8',
-    darkColor: '#38BDF8'
+    name: 'NestJS',
+    icon: SiNestjs,
+    color: '#e0234e',
+    darkColor: '#e0234e'
   },
   {
     name: 'NodeJS',
@@ -116,9 +128,9 @@ export const knowledgeList = [
     darkColor: '#8bbf3d'
   },
   {
-    name: 'NestJS',
-    icon: SiNestjs,
-    color: '#e0234e',
-    darkColor: '#e0234e'
+    name: 'TailwindCSS',
+    icon: SiTailwindcss,
+    color: '#38BDF8',
+    darkColor: '#38BDF8'
   }
 ];
