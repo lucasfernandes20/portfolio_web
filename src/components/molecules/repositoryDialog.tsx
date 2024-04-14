@@ -77,6 +77,15 @@ export function RepositoryDialog() {
             {selectedRepository.description}
           </motion.p>
         </motion.div>
+        {selectedRepository.topics.length > 0 ? (
+          <motion.ul className="w-full flex flex-wrap gap-2 mt-5">
+            {selectedRepository.topics.map((topic) => (
+              <motion.li key={topic}>
+                <Badge variant="outline">{topic}</Badge>
+              </motion.li>
+            ))}
+          </motion.ul>
+        ) : null}
       </CardContent>
       <CardFooter className="gap-2 relative">
         <Link
