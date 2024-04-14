@@ -77,7 +77,7 @@ export function RepositoryDialog() {
             {selectedRepository.description}
           </motion.p>
         </motion.div>
-        {selectedRepository.topics.length > 0 ? (
+        {!!selectedRepository.topics && selectedRepository.topics.length > 0 ? (
           <motion.ul className="w-full flex flex-wrap gap-2 mt-5">
             {selectedRepository.topics.map((topic) => (
               <motion.li key={topic}>
