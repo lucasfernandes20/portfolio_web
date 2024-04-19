@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 interface ScrollPageSectionProps {
   children: React.ReactNode;
   className?: React.ComponentProps<'div'>['className'];
@@ -12,10 +14,10 @@ export function ScrollPageSection({
   return (
     <section
       id={id}
-      className={
-        'w-screen h-svh container overflow-x-hidden snap-start flex flex-col items-center justify-center relative' +
+      className={cn(
+        'w-screen min-h-[80svh] container overflow-x-hidden flex flex-col items-center justify-center relative',
         className
-      }
+      )}
     >
       {children}
     </section>

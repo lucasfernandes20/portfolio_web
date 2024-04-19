@@ -10,7 +10,7 @@ const RECEIVER_EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 
 export async function POST(request: Request) {
   try {
-    if (ENV !== 'production') {
+    if (ENV === 'development') {
       return NextResponse.json({ message: 'test' }, { status: 200 });
     }
     const transporter = nodemailer.createTransport({

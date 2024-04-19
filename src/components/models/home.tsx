@@ -1,55 +1,34 @@
 'use client';
 
 import { ScrollPageSection } from '@/app/assets/scrollpage';
-import { AboutMe } from '../molecules/aboutMe';
-import { RecommendationSection } from '../organisms/recommendationSection';
-import { RepositoriesList } from '../organisms/repositoriesList';
-import { Github } from 'lucide-react';
+import { AboutMe } from '@/components/molecules/aboutMe';
+import { RecommendationSection } from '@/components/organisms/recommendationSection';
+import { RepositoriesList } from '@/components/organisms/repositoriesList';
+import { GithubIcon } from 'lucide-react';
 import Link from 'next/link';
-import { ContactForm } from '../organisms/contactForm';
-import { ContactMeAside } from '../organisms/contactMeAside';
-import { Presentation } from '../organisms/presentation';
-import { InfiniteKnowledgeCarousel } from '../organisms/infiniteKnowledgeCarousel';
+import { Presentation } from '@/components/organisms/presentation';
+import { InfiniteKnowledgeCarousel } from '@/components/organisms/infiniteKnowledgeCarousel';
+import { BoardBackground } from '@/components/ui/boardBackground';
+import { Subtitle } from '@/components/ui/subtitle';
 
 export function HomeModel() {
   return (
     <>
-      <ScrollPageSection id="first_section">
+      <ScrollPageSection id="hero" className="h-svh">
+        <BoardBackground type="top" />
         <Presentation />
       </ScrollPageSection>
-      <ScrollPageSection id="second_section">
-        <svg className="pointer-events-none absolute inset-0 h-full w-full stroke-gray-400 dark:stroke-muted-foreground opacity-30 [mask-image:radial-gradient(60%_60%_at_center,white,transparent)]">
-          <defs>
-            <pattern
-              id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
-              width="200"
-              height="200"
-              x="50%"
-              y="-1"
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M100 200V.5M.5 .5H200" fill="none"></path>
-            </pattern>
-          </defs>
-          <rect
-            width="100%"
-            height="100%"
-            strokeWidth="0"
-            fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
-          ></rect>
-        </svg>
-        <div className="w-full flex flex-col laptop:flex-row items-center justify-between gap-5 laptop:gap-16">
-          <RecommendationSection />
+      <ScrollPageSection id="about">
+        <BoardBackground type="center" />
+        <section className="w-full flex flex-col laptop:flex-row items-center laptop:items-start justify-between gap-16">
           <AboutMe />
-        </div>
+          <RecommendationSection />
+        </section>
       </ScrollPageSection>
-      <ScrollPageSection id="third_section">
+      <ScrollPageSection id="repositories" className="mb-24">
         <div className="w-full relative">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg tablet:text-2xl font-bold text-muted-foreground flex items-center gap-2">
-              <Github />
-              Github repositories
-            </h2>
+            <Subtitle icon={<GithubIcon />}>Github repositories</Subtitle>
             <Link
               className="underline cursor-pointer text-muted-foreground text-xs tablet:text-base"
               href="/repositories"
@@ -59,15 +38,6 @@ export function HomeModel() {
           </div>
           <RepositoriesList />
           <InfiniteKnowledgeCarousel />
-        </div>
-      </ScrollPageSection>
-      <ScrollPageSection id="contact_section">
-        <div className="w-full flex flex-col items-center justify-between gap-4">
-          <h2 className="text-muted-foreground text-xl font-bold mb-0 self-start desktop:mb-4">
-            Send me a email:
-          </h2>
-          <ContactForm />
-          <ContactMeAside />
         </div>
       </ScrollPageSection>
     </>

@@ -3,7 +3,7 @@
 import { useGlobalContext } from '@/app/context/store';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 interface HeaderNavigatorProps {
   className?: React.ComponentProps<'div'>['className'];
 }
@@ -11,17 +11,10 @@ interface HeaderNavigatorProps {
 export function HeaderNavigator({ className }: HeaderNavigatorProps) {
   const { setOpenDrawer } = useGlobalContext();
   const route = useRouter();
-  const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
-    if (pathname === '/') {
-      route.push('/');
-    } else {
-      route.push(`/#${sectionId}`);
-    }
     setOpenDrawer(false);
-    const targetSection = document.querySelector('#' + sectionId);
-    targetSection?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    route.push(sectionId);
   };
 
   return (
@@ -36,7 +29,7 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
           variant="ghost"
           size="sm"
           className="hover:bg-inherit hover:scale-105"
-          onClick={() => scrollToSection('first_section')}
+          onClick={() => scrollToSection('/#hero')}
         >
           <p className="text-muted-foreground text-base font-normal">home</p>
         </Button>
@@ -46,7 +39,7 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
           variant="ghost"
           size="sm"
           className="hover:bg-inherit hover:scale-105"
-          onClick={() => scrollToSection('second_section')}
+          onClick={() => scrollToSection('/#about')}
         >
           <p className="text-muted-foreground text-base font-normal">
             about me
@@ -58,7 +51,7 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
           variant="ghost"
           size="sm"
           className="hover:bg-inherit hover:scale-105"
-          onClick={() => scrollToSection('third_section')}
+          onClick={() => scrollToSection('/#repositories')}
         >
           <p className="text-muted-foreground text-base font-normal">
             projects

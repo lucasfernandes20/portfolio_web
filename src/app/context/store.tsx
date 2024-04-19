@@ -31,6 +31,8 @@ interface DataType {
   setTypingNameInputValue: Dispatch<SetStateAction<boolean>>;
   openDrawer: boolean;
   setOpenDrawer: Dispatch<SetStateAction<boolean>>;
+  openMailer: boolean;
+  setOpenMailer: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalContext = createContext<DataType>({
@@ -45,7 +47,9 @@ const GlobalContext = createContext<DataType>({
   typingNameInputValue: false,
   setTypingNameInputValue: () => false,
   openDrawer: false,
-  setOpenDrawer: () => false
+  setOpenDrawer: () => false,
+  openMailer: false,
+  setOpenMailer: () => false
 });
 
 export function GlobalContextProvider({
@@ -61,6 +65,7 @@ export function GlobalContextProvider({
   const [languageInputValue, setLanguageInputValue] = useState('');
   const [onlyPublic, setOnlyPublic] = useState(true);
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openMailer, setOpenMailer] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -76,7 +81,9 @@ export function GlobalContextProvider({
         typingNameInputValue,
         setTypingNameInputValue,
         openDrawer,
-        setOpenDrawer
+        setOpenDrawer,
+        openMailer,
+        setOpenMailer
       }}
     >
       {children}
