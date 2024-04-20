@@ -14,7 +14,9 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
 
   const scrollToSection = (sectionId: string) => {
     setOpenDrawer(false);
-    route.push(sectionId);
+    setTimeout(() => {
+      route.push(sectionId, { scroll: true });
+    }, 500);
   };
 
   return (
