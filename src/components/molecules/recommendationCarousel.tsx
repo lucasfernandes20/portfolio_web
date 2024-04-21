@@ -49,9 +49,13 @@ export function RecommendationCarousel() {
         {Array.from({ length: count }).map((_, index) => (
           <div
             key={index}
-            className={cn('w-2 h-2 rounded-full bg-muted-foreground/50', {
-              'bg-muted-foreground': current === index + 1
-            })}
+            onClick={() => api?.scrollTo(index)}
+            className={cn(
+              'w-2 h-2 rounded-full bg-muted-foreground/40 transition-all duration-200 cursor-pointer hover:bg-muted-foreground/80',
+              {
+                'bg-muted-foreground scale-125': current === index + 1
+              }
+            )}
           />
         ))}
       </div>
