@@ -39,9 +39,10 @@ export function Header() {
       <Drawer />
       <div className="w-full flex items-center justify-between container py-2">
         <h1
-          className="text-3xl tablet:text-6xl blod font-extrabold text-primary cursor-pointer select-none"
+          className="text-3xl blod font-extrabold text-primary cursor-pointer select-none flex items-center"
           onClick={() => route.push('/#hero')}
         >
+          <img src="/images/favicon.svg" alt="logo" className="mr-2 w-7 h-7" />
           Portfolio
         </h1>
         <HeaderNavigator className="hidden tablet:flex" />
