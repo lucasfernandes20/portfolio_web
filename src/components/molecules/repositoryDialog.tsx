@@ -101,7 +101,7 @@ export function RepositoryDialog() {
         {selectedRepository.language ? (
           <Badge
             variant="secondary"
-            className="cursor-pointer"
+            className="cursor-pointer opacity-100 hover:opacity-80 transition-opacity duration-200 ease-in-out hover:shadow-md hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
             onClick={onSelectLanguage}
           >
             {selectedRepository.language}

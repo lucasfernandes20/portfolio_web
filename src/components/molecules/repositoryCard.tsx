@@ -76,8 +76,11 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
           {repository.language ? (
             <Badge
               variant="secondary"
-              className="cursor-pointer"
-              onClick={onSelectLanguage}
+              className="cursor-pointer opacity-100 hover:opacity-80 transition-opacity duration-200 ease-in-out hover:shadow-md hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelectLanguage();
+              }}
             >
               {repository.language}
             </Badge>

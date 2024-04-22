@@ -30,16 +30,24 @@ export function RepositoriesList() {
     loading: boolean;
   }>(REPO_INITIAL_STATE);
 
+  const matchTopic = (repo: ListUserReposResponseWithIcon) =>
+    repo.topics?.some((topic) =>
+      topic.split('-').join(' ').includes(debouncedNameInputValue)
+    );
+
+  const matchName = (repo: ListUserReposResponseWithIcon) =>
+    repo.name
+      .toLocaleLowerCase()
+      .includes(debouncedNameInputValue.toLocaleLowerCase());
+
   const filterRepositories = (
     repos: ListUserReposResponseWithIcon[]
   ): ListUserReposResponseWithIcon[] => {
     let filteredRepos = [...repos];
 
     if (debouncedNameInputValue) {
-      filteredRepos = filteredRepos.filter((repo) =>
-        repo.name
-          .toLocaleLowerCase()
-          .includes(debouncedNameInputValue.toLocaleLowerCase())
+      filteredRepos = filteredRepos.filter(
+        (repo) => matchName(repo) || matchTopic(repo)
       );
     }
 
