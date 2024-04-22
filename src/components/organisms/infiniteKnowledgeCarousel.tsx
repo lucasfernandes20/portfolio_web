@@ -6,7 +6,7 @@ import {
   CarouselContent,
   CarouselItem
 } from '@/components/ui/carousel';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Tooltip,
   TooltipContent,
@@ -19,7 +19,12 @@ export function InfiniteKnowledgeCarousel() {
   const { theme, systemTheme } = useTheme();
   const plugin = useRef(Autoplay({ delay: 900, stopOnInteraction: true }));
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const [clientTheme, setClientTheme] = useState('light');
+
+  useEffect(() => {
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+    setClientTheme(currentTheme);
+  }, [systemTheme, theme]);
 
   return (
     <Carousel
@@ -37,7 +42,7 @@ export function InfiniteKnowledgeCarousel() {
                   <Card className="p-1 tablet:p-3 laptop:hover:bg-muted-foreground/10">
                     <knowledge.icon
                       color={
-                        currentTheme === 'dark'
+                        clientTheme === 'dark'
                           ? knowledge.darkColor
                           : knowledge.color
                       }
