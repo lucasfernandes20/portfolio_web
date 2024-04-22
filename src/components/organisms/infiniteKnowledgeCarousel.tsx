@@ -22,6 +22,7 @@ export function InfiniteKnowledgeCarousel() {
   const [clientTheme, setClientTheme] = useState('light');
 
   useEffect(() => {
+    if (!theme) return;
     const currentTheme = theme === 'system' ? systemTheme : theme;
     setClientTheme(currentTheme);
   }, [systemTheme, theme]);
