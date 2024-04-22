@@ -29,6 +29,7 @@ export function MailMeDrawer() {
     <>
       <DropdownMenu
         open={openMailer}
+        modal={false}
         onOpenChange={(open) => setOpenMailer(open)}
       >
         <DropdownMenuTrigger asChild>

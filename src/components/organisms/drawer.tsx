@@ -13,6 +13,7 @@ export function Drawer() {
   return (
     <DrawerComponent
       open={openDrawer}
+      modal={false}
       onOpenChange={(open) => setOpenDrawer(open)}
     >
       <DrawerContent>
