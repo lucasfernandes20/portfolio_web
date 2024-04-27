@@ -21,7 +21,7 @@ export function RecommendationCard({
           {recommendation.position}
         </p>
       </CardHeader>
-      <CardContent className="flex flex-col items-start justify-center p-6 bg-transparent desktop:p-6">
+      <CardContent className="flex flex-col items-start justify-center p-6 desktop:p-6">
         <p className="text-sm text-card-foreground">
           {recommendation.recommendation}
         </p>

@@ -10,6 +10,7 @@ import { Presentation } from '@/components/organisms/presentation';
 import { InfiniteKnowledgeCarousel } from '@/components/organisms/infiniteKnowledgeCarousel';
 import { BoardBackground } from '@/components/ui/boardBackground';
 import { Subtitle } from '@/components/ui/subtitle';
+import { ProfessionalExperiences } from '../organisms/professionalExperiences';
 
 export function HomeModel() {
   return (
@@ -25,7 +26,7 @@ export function HomeModel() {
           <RecommendationSection />
         </section>
       </ScrollPageSection>
-      <ScrollPageSection id="repositories" className="mb-24">
+      <ScrollPageSection id="repositories">
         <div className="w-full relative">
           <div className="flex items-center justify-between mb-4">
             <Subtitle icon={<GithubIcon />}>Github repositories</Subtitle>
@@ -39,6 +40,9 @@ export function HomeModel() {
           <RepositoriesList />
           <InfiniteKnowledgeCarousel />
         </div>
+      </ScrollPageSection>
+      <ScrollPageSection id="career" className="pb-24">
+        <ProfessionalExperiences />
       </ScrollPageSection>
     </>
   );
