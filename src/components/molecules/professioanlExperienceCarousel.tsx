@@ -5,14 +5,14 @@ import {
   ProfessionalExperienceCard
 } from './professionalExperienceCard';
 import { EmblaCarouselType } from 'embla-carousel';
-import { Dispatch, SetStateAction } from 'react';
 
 interface ProfessionalExperienceCarouselProps {
   experiences: Array<ProfessionalExperience>;
-  api: EmblaCarouselType;
+  api?: EmblaCarouselType;
   current: number;
   count: number;
-  setApi: Dispatch<SetStateAction<EmblaCarouselType>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setApi: any;
 }
 
 export function ProfessionalExperienceCarousel({
