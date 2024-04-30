@@ -40,7 +40,7 @@ const CustomStepper: React.FC<StepperProps> = ({
           >
             <StepIndicator className="laptop:group-hover:border-primary laptop:group-hover:border-1 text-muted-foreground">
               <StepStatus
-                complete={<StepNumber className="bg-primary" />}
+                complete={<StepNumber />}
                 incomplete={<StepNumber />}
                 active={<StepNumber />}
               />
