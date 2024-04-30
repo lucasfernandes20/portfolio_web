@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Step,
-  StepDescription,
   StepIndicator,
   StepNumber,
   StepSeparator,
@@ -9,7 +8,7 @@ import {
   StepTitle,
   Stepper
 } from '@chakra-ui/react';
-import { ProfessionalExperience } from '../molecules/professionalExperienceCard';
+import { ProfessionalExperience } from '@/components/molecules/professionalExperienceCard';
 
 interface StepperProps {
   steps: Array<ProfessionalExperience>;
@@ -39,9 +38,9 @@ const CustomStepper: React.FC<StepperProps> = ({
             className="text-muted-foreground cursor-pointer group laptop:w-full"
             onClick={() => handleStepClick(index)}
           >
-            <StepIndicator className="laptop:group-hover:border-primary laptop:group-hover:border-1">
+            <StepIndicator className="laptop:group-hover:border-primary laptop:group-hover:border-1 text-muted-foreground">
               <StepStatus
-                complete={<StepNumber />}
+                complete={<StepNumber className="bg-primary" />}
                 incomplete={<StepNumber />}
                 active={<StepNumber />}
               />
@@ -52,18 +51,12 @@ const CustomStepper: React.FC<StepperProps> = ({
                 <StepTitle className="text-primary text-xs laptop:group-hover:font-semibold laptop:group-hover:scale-105 transition-all laptop:group-hover:-translate-y-1 laptop:group-hover:translate-x-2">
                   {step.title}
                 </StepTitle>
-                <StepDescription
-                  className="laptop:text-nowrap"
-                  style={{ fontSize: '0.875rem', lineHeight: '1.25rem' }}
-                >
+                <p className="laptop:text-nowrap text-sm text-muted-foreground">
                   {step.description}
-                </StepDescription>
-                <StepDescription
-                  className="text-xs desktop:text-nowrap"
-                  style={{ fontSize: '0.65rem', lineHeight: '1rem' }}
-                >
+                </p>
+                <p className="text-xs desktop:text-nowrap text-muted-foreground">
                   {step.date}
-                </StepDescription>
+                </p>
               </div>
             ) : null}
 
@@ -81,4 +74,4 @@ const CustomStepper: React.FC<StepperProps> = ({
   );
 };
 
-export default CustomStepper;
+export { CustomStepper };

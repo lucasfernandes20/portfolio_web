@@ -1,14 +1,19 @@
+'use client';
 import { cn } from '@/lib/utils';
-import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi
+} from '@/components/ui/carousel';
 import {
   ProfessionalExperience,
   ProfessionalExperienceCard
 } from './professionalExperienceCard';
-import { EmblaCarouselType } from 'embla-carousel';
 
 interface ProfessionalExperienceCarouselProps {
   experiences: Array<ProfessionalExperience>;
-  api?: EmblaCarouselType;
+  api?: CarouselApi;
   current: number;
   count: number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,10 +28,11 @@ export function ProfessionalExperienceCarousel({
   count
 }: ProfessionalExperienceCarouselProps) {
   return (
-    <div className="w-full flex flex-col items-center gap-2">
+    <div className="w-full laptop:w-1 flex flex-grow flex-col items-center gap-2">
       <Carousel
         opts={{
-          align: 'center'
+          align: 'center',
+          loop: true
         }}
         setApi={setApi}
         className="w-full"

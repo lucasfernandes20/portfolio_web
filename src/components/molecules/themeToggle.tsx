@@ -13,7 +13,7 @@ import { useTheme } from 'next-themes';
 export function ThemeToggle() {
   const { setTheme } = useTheme();
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"

@@ -4,7 +4,7 @@ import { ScrollPageSection } from '@/app/assets/scrollpage';
 import { AboutMe } from '@/components/molecules/aboutMe';
 import { RecommendationSection } from '@/components/organisms/recommendationSection';
 import { RepositoriesList } from '@/components/organisms/repositoriesList';
-import { GithubIcon } from 'lucide-react';
+import { Award, GithubIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Presentation } from '@/components/organisms/presentation';
 import { InfiniteKnowledgeCarousel } from '@/components/organisms/infiniteKnowledgeCarousel';
@@ -41,8 +41,12 @@ export function HomeModel() {
           <InfiniteKnowledgeCarousel />
         </div>
       </ScrollPageSection>
-      <ScrollPageSection id="career" className="pb-24">
-        <ProfessionalExperiences />
+      <ScrollPageSection id="career" className="pb-28">
+        <BoardBackground type="bottom" />
+        <div className="w-full flex flex-col gap-5 items-center">
+          <Subtitle icon={<Award />}>Career</Subtitle>
+          <ProfessionalExperiences />
+        </div>
       </ScrollPageSection>
     </>
   );

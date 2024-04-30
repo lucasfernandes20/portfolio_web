@@ -72,6 +72,16 @@ export function HeaderNavigator({ className }: HeaderNavigatorProps) {
           </p>
         </Button>
       </li>
+      <li>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="hover:bg-inherit hover:scale-105"
+          onClick={() => executeScroll('#career')}
+        >
+          <p className="text-muted-foreground text-base font-normal">career</p>
+        </Button>
+      </li>
     </ul>
   );
 }

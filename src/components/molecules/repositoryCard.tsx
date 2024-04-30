@@ -35,7 +35,7 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
       layoutId={`${repository.id}`}
       className="flex flex-col justify-between cursor-pointer"
     >
-      <Card>
+      <Card className="text-muted-foreground">
         <CardHeader className="flex flex-row items-start justify-between gap-2 py-3">
           <motion.div
             layoutId={`header-${repository.id}`}
@@ -48,7 +48,7 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
               <BookCheck />
               <motion.p
                 layoutId={`name-${repository.id}`}
-                className="text-base leading-none text-ellipsis overflow-hidden whitespace-nowrap"
+                className="text-base text-ellipsis overflow-hidden whitespace-nowrap"
               >
                 {repository.name}
               </motion.p>

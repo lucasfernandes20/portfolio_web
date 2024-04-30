@@ -1,0 +1,72 @@
+[
+  {
+    "title": "TripleAI",
+    "description": "Frontend web developer",
+    "details": "As a front-end developer at TripleAI, my role involved creating prototypes in Figma and developing various front-end applications. This included crafting landing pages, a B2B chatbot platform for artificial intelligence, and a chatbot plugin designed for client websites, among other projects. My time at TripleAI greatly enhanced my autonomy, time management, and interpersonal organizational skills. I thrived in an environment where I could take ownership of my work and effectively collaborate with team members to deliver high-quality products.",
+    "technologies": [
+      "ReactJS",
+      "SnowJS",
+      "FastAPI",
+      "Typescript",
+      "Python",
+      "Styled Components",
+      "Ant Design",
+      "Material-UI",
+      "Figma"
+    ],
+    "date": "08/2023 - 04/2024"
+  },
+  {
+    "title": "6Place",
+    "description": "Fullstack web developer",
+    "details": "I worked as a full-stack web developer, playing a key role in developing a B2B food-service marketplace tailored for franchises. My responsibilities encompassed everything from creating front-end interfaces to implementing back-end systems and microservices. Additionally, I actively participated in decision-making processes, contributing insights and solutions to ensure the project's success. My experience at 6Place allowed me to enhance my technical and leadership skills, while also gaining a deeper understanding of the food service industry and the B2B business environment.",
+    "technologies": [
+      "NextJS",
+      "ReactJS",
+      "NodeJS",
+      "NestJS",
+      "Express",
+      "PostgreSQL",
+      "Typescript",
+      "Styled Components",
+      "Jest"
+    ],
+    "date": "02/2022 - 08/2023"
+  },
+  {
+    "title": "Trybe",
+    "description": "Student",
+    "details": "During my time as a student at Trybe, I completed the CST (Higher Technology Course) over the span of one year. This experience allowed me to elevate my knowledge from foundational to more advanced levels. I engaged in numerous projects, expanding my network and delving into career-oriented classes to enhance my skills as a developer. My tenure at Trybe not only provided me with valuable technical expertise but also equipped me with the tools and resources necessary to continuously improve and excel in my career journey.",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "Git",
+      "Javascript",
+      "Typescript",
+      "ReactJS",
+      "NodeJS",
+      "Express",
+      "MongoDB",
+      "MySQL",
+      "Jest",
+      "React Testing Library",
+      "Python"
+    ],
+    "date": "04/2021 - 04/2022"
+  },
+  {
+    "title": "ArtDesign",
+    "description": "Frontend developer (freelancer)",
+    "details": "As a freelancer at ArtDesign for one year, I specialized in front-end development for basic applications, including landing pages and product pages. Additionally, I handled minor maintenance tasks for the company's systems. This experience enabled me to hone my front-end skills while also gaining practical experience in maintaining and enhancing existing systems. Working with ArtDesign afforded me the opportunity to deliver high-quality work while adapting to the needs and standards of the company.",
+    "technologies": [
+      "ReactJS",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "PHP",
+      "MySQL"
+    ],
+    "date": "02/2021 - 12/2021"
+  }
+]
