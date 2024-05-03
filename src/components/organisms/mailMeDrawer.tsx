@@ -58,7 +58,7 @@ export function MailMeDrawer() {
           <Button
             variant="default"
             size="icon"
-            className="left-10 bottom-10 rounded-full size-16 fixed tablet:hidden"
+            className="left-10 bottom-10 rounded-full size-12 fixed tablet:hidden"
           >
             <Mail />
           </Button>
