@@ -19,14 +19,14 @@ export function HomeModel() {
         <BoardBackground type="top" />
         <Presentation />
       </ScrollPageSection>
-      <ScrollPageSection id="about">
+      <ScrollPageSection id="about" className="py-12">
         <BoardBackground type="center" />
         <section className="w-full flex flex-col laptop:flex-row items-center laptop:items-start justify-between gap-16">
           <AboutMe />
           <RecommendationSection />
         </section>
       </ScrollPageSection>
-      <ScrollPageSection id="repositories">
+      <ScrollPageSection id="repositories" className="py-12">
         <div className="w-full relative">
           <div className="flex items-center justify-between mb-4">
             <Subtitle icon={<GithubIcon />}>Github repositories</Subtitle>
@@ -41,7 +41,7 @@ export function HomeModel() {
           <InfiniteKnowledgeCarousel />
         </div>
       </ScrollPageSection>
-      <ScrollPageSection id="career" className="pb-28">
+      <ScrollPageSection id="career" className="pt-12 pb-28">
         <BoardBackground type="bottom" />
         <div className="w-full flex flex-col gap-5 items-center">
           <Subtitle icon={<Award />}>Career</Subtitle>
