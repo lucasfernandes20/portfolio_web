@@ -1,4 +1,4 @@
-import { ListUserReposResponse } from '@/app/context/store';
+import { ListUserReposResponse } from '@app/context/store';
 import octokitService from './index';
 
 const GITHUB_NAME = process.env.NEXT_PUBLIC_GITHUB_NAME;

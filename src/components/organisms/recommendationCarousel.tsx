@@ -4,11 +4,11 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi
-} from '@/components/ui/carousel';
-import recommendations from '@/data/recommendations.json';
-import { RecommendationCard } from './recommendationCard';
+} from '@components/ui/carousel';
+import recommendations from '@src/data/recommendations.json';
+import { RecommendationCard } from '../molecules/recommendationCard';
 import { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@src/lib/utils';
 
 export function RecommendationCarousel() {
   const [api, setApi] = useState<CarouselApi>();

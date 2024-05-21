@@ -1,9 +1,9 @@
 import { type CarouselApi } from '../ui/carousel';
-import { CustomStepper } from '@/components/ui/stepper';
+import { CustomStepper } from '@components/ui/stepper';
 import { useEffect, useState } from 'react';
-import { ProfessionalExperienceCarousel } from '@/components/molecules/professioanlExperienceCarousel';
-import { ProfessionalExperience } from '@/components/molecules/professionalExperienceCard';
-import experiencesData from '@/data/experiences.json';
+import { ProfessionalExperienceCarousel } from '@components/organisms/professioanlExperienceCarousel';
+import { ProfessionalExperience } from '@components/molecules/professionalExperienceCard';
+import experiencesData from '@src/data/experiences.json';
 
 const experiences: ProfessionalExperience[] = experiencesData;
 

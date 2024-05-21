@@ -1,15 +1,15 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { cn } from '@src/lib/utils';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi
-} from '@/components/ui/carousel';
+} from '@components/ui/carousel';
 import {
   ProfessionalExperience,
   ProfessionalExperienceCard
-} from './professionalExperienceCard';
+} from '../molecules/professionalExperienceCard';
 
 interface ProfessionalExperienceCarouselProps {
   experiences: Array<ProfessionalExperience>;

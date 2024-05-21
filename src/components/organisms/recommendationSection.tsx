@@ -1,8 +1,8 @@
-import { RecommendationCarousel } from '../molecules/recommendationCarousel';
-import { Button } from '@/components/ui/button';
+import { RecommendationCarousel } from './recommendationCarousel';
+import { Button } from '@components/ui/button';
 import { ArrowUpRightFromCircle, LinkedinIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Subtitle } from '@/components/ui/subtitle';
+import { Subtitle } from '@components/ui/subtitle';
 
 export function RecommendationSection() {
   return (

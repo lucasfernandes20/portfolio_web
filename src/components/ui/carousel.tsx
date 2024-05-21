@@ -11,8 +11,8 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { cn } from '@src/lib/utils';
+import { Button } from '@components/ui/button';
 
 type CarouselProps = {
   opts?: CarouselOptions;

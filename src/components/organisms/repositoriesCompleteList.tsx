@@ -1,13 +1,13 @@
 'use client';
 
-import { getReposRequest } from '@/services/github/getRepos';
+import { getReposRequest } from '@src/services/github/getRepos';
 import { useEffect, useState } from 'react';
 import {
   ListUserReposResponseWithIcon,
   useGlobalContext
-} from '@/app/context/store';
-import addLanguageIcon from '@/app/utils/addLanguageIcon';
-import { Skeleton } from '@/components/ui/skeleton';
+} from '@app/context/store';
+import addLanguageIcon from '@app/utils/addLanguageIcon';
+import { Skeleton } from '@components/ui/skeleton';
 import { RepositoryCard } from '../molecules/repositoryCard';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { RepositoryDialog } from '../molecules/repositoryDialog';

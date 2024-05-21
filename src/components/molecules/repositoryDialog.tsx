@@ -1,15 +1,10 @@
-import { useGlobalContext } from '@/app/context/store';
-import countYearFromDate from '@/app/utils/countYearsFromDate';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { useGlobalContext } from '@app/context/store';
+import countYearFromDate from '@app/utils/countYearsFromDate';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader
-} from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
 import { BookCheck, Link as LinkIcon } from 'lucide-react';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import Link from 'next/link';

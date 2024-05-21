@@ -1,12 +1,12 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@components/ui/button';
 import { AlignRight } from 'lucide-react';
-import { HeaderNavigator } from '@/components/molecules/headerNavigator';
+import { HeaderNavigator } from '@components/molecules/headerNavigator';
 import { Drawer } from './drawer';
-import { useGlobalContext } from '@/app/context/store';
+import { useGlobalContext } from '@app/context/store';
 import { useRouter } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn } from '@src/lib/utils';
 import { useEffect, useState } from 'react';
 
 export function Header() {

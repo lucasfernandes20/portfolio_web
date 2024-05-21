@@ -8,7 +8,7 @@ import {
   StepTitle,
   Stepper
 } from '@chakra-ui/react';
-import { ProfessionalExperience } from '@/components/molecules/professionalExperienceCard';
+import { ProfessionalExperience } from '@components/molecules/professionalExperienceCard';
 
 interface StepperProps {
   steps: Array<ProfessionalExperience>;

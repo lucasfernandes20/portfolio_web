@@ -6,11 +6,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
+} from '@components/ui/dropdown-menu';
 import { Button } from '../ui/button';
 import { Mail } from 'lucide-react';
-import { Subtitle } from '@/components/ui/subtitle';
-import { MailMeForm } from '@/components/molecules/mailMeForm';
+import { Subtitle } from '@components/ui/subtitle';
+import { MailMeForm } from '@components/molecules/mailMeForm';
 import {
   Drawer,
   DrawerContent,
@@ -19,9 +19,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from '@/components/ui/drawer';
-import { Contacts } from '@/components/molecules/contacts';
-import { useGlobalContext } from '@/app/context/store';
+} from '@components/ui/drawer';
+import { Contacts } from '@components/molecules/contacts';
+import { useGlobalContext } from '@app/context/store';
 
 export function MailMeDrawer() {
   const { openMailer, setOpenMailer } = useGlobalContext();
@@ -36,7 +36,7 @@ export function MailMeDrawer() {
           <Button
             variant="default"
             size="icon"
-            className="fixed hidden tablet:flex left-10 bottom-10 rounded-full size-16"
+            className="fixed hidden z-50 tablet:flex left-10 bottom-10 rounded-full size-16"
           >
             <Mail />
           </Button>
@@ -58,7 +58,7 @@ export function MailMeDrawer() {
           <Button
             variant="default"
             size="icon"
-            className="left-10 bottom-10 rounded-full size-12 fixed tablet:hidden"
+            className="left-10 z-50 bottom-10 rounded-full size-12 fixed tablet:hidden"
           >
             <Mail />
           </Button>

@@ -19,9 +19,11 @@
       }
     ],
     "importHelpers": true,
-    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
+      "baseUrl": ["."],
+      "@components/*": ["./src/components/*"],
+      "@app/*": ["./src/app/*"],
+      "@src/*": ["./src/*"]
     }    
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

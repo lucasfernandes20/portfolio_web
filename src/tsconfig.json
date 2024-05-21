@@ -21,10 +21,12 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./",
     "importHelpers": true,
     "paths": {
-      "@/*": ["./*"],
+      "baseUrl": ["./*"],
+      "@components/*": ["./components/*"],
+      "@app/*": ["./app/*"],
+      "@src/*": ["./*"]
     }
   },
   "include": [

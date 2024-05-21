@@ -1,4 +1,4 @@
-import { Subtitle } from '@/components/ui/subtitle';
+import { Subtitle } from '@components/ui/subtitle';
 import { BookOpenText } from 'lucide-react';
 
 export function AboutMe() {

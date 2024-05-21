@@ -1,8 +1,8 @@
 'use client';
 
-import { useGlobalContext } from '@/app/context/store';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { useGlobalContext } from '@app/context/store';
+import { Button } from '@components/ui/button';
+import { cn } from '@src/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';
 interface HeaderNavigatorProps {
   className?: React.ComponentProps<'div'>['className'];

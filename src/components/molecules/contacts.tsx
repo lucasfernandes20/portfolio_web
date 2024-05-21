@@ -1,10 +1,10 @@
-import { socialMediaList } from '@/data/socialMedia';
+import { socialMediaList } from '@src/data/socialMedia';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/components/ui/tooltip';
+} from '@components/ui/tooltip';
 import Link from 'next/link';
 
 export function Contacts() {

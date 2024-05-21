@@ -1,18 +1,18 @@
-import { knowledgeList } from '@/data/knowledge';
+import { knowledgeList } from '@src/data/knowledge';
 import Autoplay from 'embla-carousel-autoplay';
-import { Card } from '@/components/ui/card';
+import { Card } from '@components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem
-} from '@/components/ui/carousel';
+} from '@components/ui/carousel';
 import { useEffect, useRef, useState } from 'react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/components/ui/tooltip';
+} from '@components/ui/tooltip';
 import { useTheme } from 'next-themes';
 
 export function InfiniteKnowledgeCarousel() {

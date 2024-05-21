@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { ThemeToggle } from '../molecules/themeToggle';
 import { useEffect, useState } from 'react';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '@components/ui/skeleton';
 
 export function ThemeSwitcher() {
   const { theme } = useTheme();

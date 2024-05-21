@@ -3,9 +3,9 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerTitle
-} from '@/components/ui/drawer';
+} from '@components/ui/drawer';
 import { HeaderNavigator } from '../molecules/headerNavigator';
-import { useGlobalContext } from '@/app/context/store';
+import { useGlobalContext } from '@app/context/store';
 
 export function Drawer() {
   const { openDrawer, setOpenDrawer } = useGlobalContext();

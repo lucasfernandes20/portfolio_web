@@ -1,10 +1,5 @@
-import { Badge } from '@/components/ui/badge';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader
-} from '@/components/ui/card';
+import { Badge } from '@components/ui/badge';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
 
 export interface ProfessionalExperience {
   title: string;
@@ -38,7 +33,7 @@ export function ProfessionalExperienceCard({
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground text-sm laptop:text-base text-wrap text-pretty">
+        <p className="text-muted-foreground text-sm laptop:text-base text-wrap">
           {experience.details}
         </p>
       </CardContent>

@@ -3,10 +3,10 @@
 import {
   ListUserReposResponseWithIcon,
   useGlobalContext
-} from '@/app/context/store';
-import countYearFromDate from '@/app/utils/countYearsFromDate';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardFooter, CardHeader } from '@/components/ui/card';
+} from '@app/context/store';
+import countYearFromDate from '@app/utils/countYearsFromDate';
+import { Badge } from '@components/ui/badge';
+import { Card, CardFooter, CardHeader } from '@components/ui/card';
 import { BookCheck } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';

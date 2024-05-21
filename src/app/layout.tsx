@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Providers } from './providers';
 import { fonts } from './fonts';
-import { Toaster } from '@/components/ui/toaster';
-import { Header } from '@/components/organisms/header';
+import { Toaster } from '@components/ui/toaster';
+import { Header } from '@components/organisms/header';
 import { Analytics } from '@vercel/analytics/react';
-import { MailMeDrawer } from '@/components/organisms/mailMeDrawer';
+import { MailMeDrawer } from '@components/organisms/mailMeDrawer';
 
 export const metadata: Metadata = {
   title: 'Lucas portfolio',

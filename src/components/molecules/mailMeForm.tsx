@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { EmailInput } from '@/components/molecules/emailInput';
-import { TextInput } from '@/components/molecules/textInput';
+import { Button } from '@components/ui/button';
+import { Label } from '@components/ui/label';
+import { Textarea } from '@components/ui/textarea';
+import { EmailInput } from '@components/molecules/emailInput';
+import { TextInput } from '@components/molecules/textInput';
 import { BiCheckCircle } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import { LoaderIcon } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
-import { cn } from '@/lib/utils';
+import { useToast } from '@components/ui/use-toast';
+import { cn } from '@src/lib/utils';
 
 type FormData = {
   name: string;
