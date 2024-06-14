@@ -1,8 +1,22 @@
 [
   {
+    "title": "Linked",
+    "description": "Frontend web developer",
+    "details": "As a front-end developer at my current company, I am responsible for writing, maintaining, and implementing new features in the codebase for B2B applications used primarily in the restaurant industry.",
+    "logo": "https://media.licdn.com/dms/image/C4E0BAQHEpj9Q8bkXKQ/company-logo_200_200/0/1630588232721/linkedgourmet_logo?e=2147483647&v=beta&t=Ejb944OpKGzhLQeKszNqnMSJEMQrwfgOkBLVIIWP0zM",
+    "technologies": [
+      "Angular",
+      "Angular Material",
+      "Electron",
+      "Typescript"
+    ],
+    "date": "08/2023 - 04/2024"
+  },
+  {
     "title": "TripleAI",
     "description": "Frontend web developer",
     "details": "As a front-end developer at TripleAI, my role involved creating prototypes in Figma and developing various front-end applications. This included crafting landing pages, a B2B chatbot platform for artificial intelligence, and a chatbot plugin designed for client websites, among other projects. My time at TripleAI greatly enhanced my autonomy, time management, and interpersonal organizational skills. I thrived in an environment where I could take ownership of my work and effectively collaborate with team members to deliver high-quality products.",
+    "logo": "https://yt3.googleusercontent.com/axZ2nkid5p3fKcaoS6bsjVeh9DDVZEvSvxZhKwTx4NRZA6I1v574EkiBoXaALocMHzOdBYR3=s900-c-k-c0x00ffffff-no-rj",
     "technologies": [
       "ReactJS",
       "SnowJS",
@@ -20,6 +34,7 @@
     "title": "6Place",
     "description": "Fullstack web developer",
     "details": "I worked as a full-stack web developer, playing a key role in developing a B2B food-service marketplace tailored for franchises. My responsibilities encompassed everything from creating front-end interfaces to implementing back-end systems and microservices. Additionally, I actively participated in decision-making processes, contributing insights and solutions to ensure the project's success. My experience at 6Place allowed me to enhance my technical and leadership skills, while also gaining a deeper understanding of the food service industry and the B2B business environment.",
+    "logo": "https://media.licdn.com/dms/image/D4D22AQFJZ75e21MtRw/feedshare-shrink_800/0/1698012553273?e=2147483647&v=beta&t=42oTmB8i7EgxQxAplLMr3_FrEjLeOGyYP4-CYo49-qs",
     "technologies": [
       "NextJS",
       "ReactJS",
@@ -37,6 +52,7 @@
     "title": "Trybe",
     "description": "Student",
     "details": "During my time as a student at Trybe, I completed the CST (Higher Technology Course) over the span of one year. This experience allowed me to elevate my knowledge from foundational to more advanced levels. I engaged in numerous projects, expanding my network and delving into career-oriented classes to enhance my skills as a developer. My tenure at Trybe not only provided me with valuable technical expertise but also equipped me with the tools and resources necessary to continuously improve and excel in my career journey.",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgJLI_k1KcBWDs2fPzyjeQLmnH8IFDygJKuw&s",
     "technologies": [
       "HTML",
       "CSS",

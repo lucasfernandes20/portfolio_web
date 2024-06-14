@@ -12,7 +12,7 @@ export function RecommendationCard({
   recommendation
 }: RecommendationCardProps) {
   return (
-    <Card className="bg-card h-full">
+    <Card className="bg-card h-full select-none">
       <CardHeader className="desktop:space-y-1.5 desktop:p-6">
         <span className="text-lg font-semibold text-primary">
           {recommendation.name}
