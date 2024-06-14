@@ -74,7 +74,7 @@ export const knowledgeList = [
     darkColor: '#fff'
   },
   {
-    name: 'AngularJS',
+    name: 'Angular',
     icon: SiAngular,
     color: '#dd0031',
     darkColor: '#dd0031'

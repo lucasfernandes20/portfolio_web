@@ -33,7 +33,7 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
     <motion.li
       onClick={selectRepo}
       layoutId={`${repository.id}`}
-      className="flex flex-col justify-between cursor-pointer"
+      className="flex flex-col justify-between cursor-pointer hover:scale-105 transition-all"
     >
       <Card className="text-muted-foreground">
         <CardHeader className="flex flex-row items-start justify-between gap-2 py-3">
