@@ -50,6 +50,6 @@ Para mais informações ou qualquer dúvida, você pode me encontrar em:
 
 Você pode acessar o site na seguinte url:
 
-[kukkadev.tech](https://kukkadev.tech)
+[lucasfernandes.tech](https://lucasfernandes.tech)
 
 ---
