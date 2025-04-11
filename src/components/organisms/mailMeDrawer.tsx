@@ -41,7 +41,7 @@ export function MailMeDrawer() {
             <Mail />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-svw max-w-[600px] ml-10 mb-4 p-4 rounded-xl">
+        <DropdownMenuContent className="w-svw max-w-[600px] ml-10 mb-4 p-4 border-[1px] border-border shadow-2xl rounded-xl">
           <DropdownMenuLabel>
             <Subtitle>Send me a email</Subtitle>
             <p className="text-sx text-muted-foreground/80">

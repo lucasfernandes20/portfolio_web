@@ -3,32 +3,16 @@ function countYearFromDate(date: Date): string {
   const monthsOnAYear = 12;
 
   const diffYears = currentDate.getFullYear() - date.getFullYear();
-  const diffMonths = currentDate.getMonth() + 1 - (date.getMonth() + 1);
-  const totalMonths = diffYears * monthsOnAYear + diffMonths;
+  const diffMonths = currentDate.getMonth() - date.getMonth();
+  const totalMonths = diffYears * 12 + diffMonths;
 
-  const intYears = Math.floor(totalMonths / monthsOnAYear).toFixed(0);
+  const years = Math.floor(totalMonths / 12);
+  const monthsOver = totalMonths % 12;
 
-  const hasYears = totalMonths >= 12;
-
-  let total = '';
-
-  if (hasYears) {
-    total = `${intYears} year${diffYears !== 1 ? 's' : ''}`;
+  if (monthsOver >= 2) {
+    return `more than ${years} year${years !== 1 ? 's' : ''}`;
   }
-
-  if (totalMonths % 12) {
-    if (hasYears) {
-      total +=
-        ' ' +
-        `and ${totalMonths % 12} month${totalMonths % 12 !== 1 ? 's' : ''}`;
-    } else {
-      total = `${totalMonths % 12} month${totalMonths % 12 !== 1 ? 's' : ''}`;
-    }
-  }
-
-  if (!total) total = 'Less than one month';
-
-  return total;
+  return `${years} year${years !== 1 ? 's' : ''}`;
 }
 
 export default countYearFromDate;
