@@ -13,14 +13,14 @@ export function ThemeSwitcher() {
     const timeout = setTimeout(() => {
       setMounted(true);
     }, 100);
-    
+
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <AnimatePresence>
       {mounted && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}

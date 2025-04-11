@@ -34,17 +34,15 @@ export function Header() {
     <AnimatePresence>
       <motion.header
         initial={{ opacity: 0 }}
-        animate={{ 
+        animate={{
           opacity: 1,
           scale: scrolled ? 1.02 : 1,
-          top: scrolled ? '16px' : '0px',
+          top: scrolled ? '16px' : '0px'
         }}
         transition={{ duration: 0.4 }}
         className={cn(
           'w-[96%] max-w-[1400px] fixed m-auto left-0 right-0 z-40 transition-all py-2 rounded-3xl duration-500 ease-in-out border-muted-foreground/10',
-          scrolled 
-            ? 'backdrop-blur bg-background/70 border shadow-lg' 
-            : ''
+          scrolled ? 'backdrop-blur bg-background/70 border shadow-lg' : ''
         )}
       >
         <Drawer />

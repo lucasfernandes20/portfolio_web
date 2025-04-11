@@ -8,7 +8,11 @@ import { GradientBall } from '../molecules/gradientBall';
 import { Contacts } from '@components/molecules/contacts';
 import { motion } from 'framer-motion';
 
-const roles = ['Front-end developer', 'Back-end developer', 'Full-stack developer'];
+const roles = [
+  'Front-end developer',
+  'Back-end developer',
+  'Full-stack developer'
+];
 
 export function Presentation() {
   const [totalTimeAsDev, setTotalTimeAsDev] = useState<string>('2 years');
@@ -56,12 +60,13 @@ export function Presentation() {
           className="max-w-3xl mx-auto"
         >
           <p className="text-base tablet:text-lg laptop:text-xl text-secondary-foreground/80 text-center z-30 mb-8">
-            {`With ${totalTimeAsDev} `} of experience as a developer, I excel
-            in JavaScript, mastering key frameworks for both{' '}
-            <span className="text-primary font-bold">front-end</span> and <span className="text-primary font-bold">back-end </span>
-            development. Crafting responsive, elegant, and high-performance solutions
-            that bring ideas to life. Explore my portfolio to see how my expertise can enhance
-            your projects.
+            {`With ${totalTimeAsDev} `} of experience as a developer, I excel in
+            JavaScript, mastering key frameworks for both{' '}
+            <span className="text-primary font-bold">front-end</span> and{' '}
+            <span className="text-primary font-bold">back-end </span>
+            development. Crafting responsive, elegant, and high-performance
+            solutions that bring ideas to life. Explore my portfolio to see how
+            my expertise can enhance your projects.
           </p>
         </motion.div>
         <div>
