@@ -1,42 +1,55 @@
 'use client';
 
 import { ScrollPageSection } from '@app/assets/scrollpage';
-import { AboutMe } from '@components/molecules/aboutMe';
 import { RecommendationSection } from '@components/organisms/recommendationSection';
 import { RepositoriesList } from '@components/organisms/repositoriesList';
 import { Award, GithubIcon } from 'lucide-react';
-import Link from 'next/link';
 import { Presentation } from '@components/organisms/presentation';
 import { InfiniteKnowledgeCarousel } from '@components/organisms/infiniteKnowledgeCarousel';
 import { BoardBackground } from '@components/ui/boardBackground';
 import { Subtitle } from '@components/ui/subtitle';
 import { ProfessionalExperiences } from '../organisms/professionalExperiences';
+import { ParticlesBackground } from '@components/ui/particlesBackground';
+import { useTheme } from 'next-themes';
 
 export function HomeModel() {
+  const { theme } = useTheme();
   return (
     <>
-      <ScrollPageSection id="hero" className="min-h-svh">
+      <ScrollPageSection
+        id="hero"
+        className="min-h-svh max-w-[none_!important]"
+      >
         <BoardBackground type="top" />
         <Presentation />
+        <ParticlesBackground
+          particleCount={80}
+          particleColor={
+            theme === 'dark'
+              ? 'rgba(255, 255, 255, 0.15)'
+              : 'rgba(0, 0, 0, 0.155)'
+          }
+          particleSize={2}
+          particleSpeed={0.2}
+          connectParticles={true}
+          connectionDistance={200}
+          connectionOpacity={0.5}
+          interactive={false}
+          interactionRadius={180}
+          interactionStrength={0.8}
+        />
       </ScrollPageSection>
       <ScrollPageSection id="about" className="py-12">
         <BoardBackground type="center" />
-        <section className="w-full flex flex-col laptop:flex-row items-center laptop:items-start justify-between gap-16">
-          <AboutMe />
+        <section className="w-full flex flex-col items-center justify-center">
           <RecommendationSection />
         </section>
       </ScrollPageSection>
       <ScrollPageSection id="repositories" className="py-12">
         <div className="w-full relative">
-          <div className="flex items-center justify-between mb-4">
-            <Subtitle icon={<GithubIcon />}>Github repositories</Subtitle>
-            <Link
-              className="underline cursor-pointer text-muted-foreground text-xs tablet:text-base"
-              href="/repositories"
-            >
-              see all
-            </Link>
-          </div>
+          <Subtitle className="mb-4" icon={<GithubIcon />}>
+            Github repositories
+          </Subtitle>
           <RepositoriesList />
           <InfiniteKnowledgeCarousel />
         </div>

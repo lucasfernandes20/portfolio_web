@@ -24,9 +24,9 @@ export function ThemeSwitcher() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="bg-card dark:bg-muted rounded-full px-3 py-1 tablet:px-4 tablet:py-2 border border-muted-foreground/10 mb-6 hover:scale-105 focus:scale-105 transition-all cursor-default flex items-center gap-4 z-30"
+          className="bg-muted rounded-2xl px-3 py-1 tablet:px-4 tablet:py-2 border border-muted-foreground/10 mb-6 hover:scale-105 focus:scale-105 transition-all cursor-default flex items-center gap-4 z-30"
         >
-          <p className="text-sm tablet:text-base text-muted-foreground select-none">{`Using ${theme} theme`}</p>
+          <p className="text-xs tablet:text-base text-muted-foreground select-none">{`Using ${theme} theme`}</p>
           <ThemeToggle />
         </motion.div>
       )}

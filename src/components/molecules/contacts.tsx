@@ -19,7 +19,7 @@ export function Contacts() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.5 }}
-                className="text-xl text-primary p-4 rounded-xl bg-muted-foreground/5 tablet:hover:bg-muted-foreground/10 cursor-pointer z-30"
+                className="text-base tablet:text-xl laptop:text-2xl text-primary p-4 rounded-xl bg-muted-foreground/5 tablet:hover:bg-muted-foreground/10 cursor-pointer z-30"
               >
                 <Link href={socialMedia.path} target="_blank">
                   <socialMedia.icon />

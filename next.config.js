@@ -6,7 +6,8 @@ const nextConfig = {
       'yt3.googleusercontent.com',
       'encrypted-tbn0.gstatic.com'
     ]
-  }
+  },
+  reactStrictMode: false
 };
 
 module.exports = nextConfig;

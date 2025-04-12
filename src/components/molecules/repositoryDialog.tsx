@@ -2,7 +2,6 @@ import { useGlobalContext } from '@app/context/store';
 import countYearFromDate from '@app/utils/countYearsFromDate';
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
-import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
 import { BookCheck, Link as LinkIcon } from 'lucide-react';
@@ -10,17 +9,9 @@ import { RiCloseCircleLine } from 'react-icons/ri';
 import Link from 'next/link';
 
 export function RepositoryDialog() {
-  const { selectedRepository, setSelectedRepository, setLanguageInputValue } =
-    useGlobalContext();
-  const route = useRouter();
+  const { selectedRepository, setSelectedRepository } = useGlobalContext();
 
   if (!selectedRepository) return;
-
-  const onSelectLanguage = () => {
-    setLanguageInputValue(selectedRepository.language || '');
-    setSelectedRepository(null);
-    route.push('/repositories');
-  };
 
   return (
     <Card className="w-full">
@@ -97,7 +88,6 @@ export function RepositoryDialog() {
           <Badge
             variant="secondary"
             className="cursor-pointer opacity-100 hover:opacity-80 transition-opacity duration-200 ease-in-out hover:shadow-md hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
-            onClick={onSelectLanguage}
           >
             {selectedRepository.language}
           </Badge>

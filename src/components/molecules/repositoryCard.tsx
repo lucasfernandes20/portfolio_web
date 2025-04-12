@@ -8,7 +8,6 @@ import countYearFromDate from '@app/utils/countYearsFromDate';
 import { Badge } from '@components/ui/badge';
 import { Card, CardFooter, CardHeader } from '@components/ui/card';
 import { BookCheck } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 interface RepositoryCardProps {
@@ -16,17 +15,10 @@ interface RepositoryCardProps {
 }
 
 export function RepositoryCard({ repository }: RepositoryCardProps) {
-  const { setSelectedRepository, setLanguageInputValue } = useGlobalContext();
-  const route = useRouter();
+  const { setSelectedRepository } = useGlobalContext();
 
   const selectRepo = () => {
     setSelectedRepository(repository);
-  };
-
-  const onSelectLanguage = () => {
-    setLanguageInputValue(repository.language || '');
-    setSelectedRepository(null);
-    route.push('/repositories');
   };
 
   return (
@@ -77,20 +69,12 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
             <Badge
               variant="secondary"
               className="cursor-pointer opacity-100 hover:opacity-80 transition-opacity duration-200 ease-in-out hover:shadow-md hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
-              onClick={(e) => {
-                e.stopPropagation();
-                onSelectLanguage();
-              }}
             >
               {repository.language}
             </Badge>
           ) : (
-            <Badge
-              variant="secondary"
-              className="opacity-0"
-              onClick={onSelectLanguage}
-            >
-              not identifiable
+            <Badge variant="secondary" className="opacity-0">
+              Not identifiable
             </Badge>
           )}
         </CardFooter>

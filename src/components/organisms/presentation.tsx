@@ -4,7 +4,6 @@ import TypewriterComponent from 'typewriter-effect';
 import { ThemeSwitcher } from './themeSwitcher';
 import { useEffect, useState } from 'react';
 import countYearFromDate from '@app/utils/countYearsFromDate';
-import { GradientBall } from '../molecules/gradientBall';
 import { Contacts } from '@components/molecules/contacts';
 import { motion } from 'framer-motion';
 
@@ -24,42 +23,38 @@ export function Presentation() {
   }, []);
 
   return (
-    <section className="w-full z-30 min-h-[90vh] py-16 pt-20 laptop:py-24 flex flex-col items-center justify-center">
-      <div className="w-full max-w-4xl mx-auto flex flex-col text-center items-center justify-center relative">
+    <section className="w-full z-30 min-h-[90vh] py-16 pt-20 laptop:py-24 flex flex-col items-center justify-center relative overflow-hidden">
+      <div className="w-full max-w-4xl mx-auto flex flex-col text-center items-center laptop:items-start justify-center relative">
         <ThemeSwitcher />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="mb-4"
         >
-          <h1 className="text-5xl tablet:text-7xl laptop:text-8xl text-foreground bold font-bold z-30">
-            {`Hello, I'm `}
-            <span className="text-primary">Lucas</span>
-          </h1>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 1 }}
-          className="mt-4 mb-8"
-        >
-          <h6 className="text-lg tablet:text-2xl laptop:text-3xl text-secondary-foreground z-30">
-            <TypewriterComponent
-              options={{
-                strings: roles,
-                autoStart: true,
-                loop: true
-              }}
-            />
-          </h6>
+          <div className="text-center laptop:text-start self-start z-30">
+            <p className="text-base text-primary font-bold">{`Hello, I'm `}</p>
+            <h1 className="text-3xl tablet:text-4xl laptop:text-5xl text-foreground/80 font-bold">
+              Lucas Fernandes.
+            </h1>
+            <h6 className="text-base tablet:text-xl laptop:text-xl text-secondary-foreground z-30">
+              <TypewriterComponent
+                options={{
+                  strings: roles,
+                  autoStart: true,
+                  loop: true
+                }}
+              />
+            </h6>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="max-w-3xl mx-auto"
+          className="max-w-3xl mt-6 laptop:max-w-xl"
         >
-          <p className="text-base tablet:text-lg laptop:text-xl text-secondary-foreground/80 text-center z-30 mb-8">
+          <p className="text-sm tablet:text-base laptop:text-base text-secondary-foreground/80 text-center laptop:text-start z-30">
             {`With ${totalTimeAsDev} `} of experience as a developer, I excel in
             JavaScript, mastering key frameworks for both{' '}
             <span className="text-primary font-bold">front-end</span> and{' '}
@@ -72,7 +67,6 @@ export function Presentation() {
         <div>
           <Contacts />
         </div>
-        <GradientBall />
       </div>
     </section>
   );

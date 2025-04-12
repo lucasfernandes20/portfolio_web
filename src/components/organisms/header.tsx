@@ -39,7 +39,7 @@ export function Header() {
           scale: scrolled ? 1.02 : 1,
           top: scrolled ? '16px' : '0px'
         }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.1 }}
         className={cn(
           'w-[96%] max-w-[1400px] fixed m-auto left-0 right-0 z-40 transition-all py-2 rounded-3xl duration-500 ease-in-out border-muted-foreground/10',
           scrolled ? 'backdrop-blur bg-background/70 border shadow-lg' : ''
@@ -63,12 +63,12 @@ export function Header() {
             <AlignRight className="text-muted-foreground h-8 w-8" />
           </Button>
           <Button
-            variant="default"
+            variant="outline"
             size="default"
-            className="hidden laptop:block p-2 py-0"
+            className="hidden border-primary laptop:block p-2 py-0"
             onClick={() => setOpenMailer((prev) => !prev)}
           >
-            <p className="text-base text-primary-foreground">Contact me</p>
+            <p className="text-base text-primary">Contact me</p>
           </Button>
         </div>
       </motion.header>

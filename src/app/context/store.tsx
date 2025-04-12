@@ -21,14 +21,6 @@ interface DataType {
   setSelectedRepository: Dispatch<
     SetStateAction<ListUserReposResponseWithIcon | null>
   >;
-  debouncedNameInputValue: string;
-  setDebouncedNameInputValue: Dispatch<SetStateAction<string>>;
-  languageInputValue: string;
-  setLanguageInputValue: Dispatch<SetStateAction<string>>;
-  onlyPublic: boolean;
-  setOnlyPublic: Dispatch<SetStateAction<boolean>>;
-  typingNameInputValue: boolean;
-  setTypingNameInputValue: Dispatch<SetStateAction<boolean>>;
   openDrawer: boolean;
   setOpenDrawer: Dispatch<SetStateAction<boolean>>;
   openMailer: boolean;
@@ -38,14 +30,6 @@ interface DataType {
 const GlobalContext = createContext<DataType>({
   selectedRepository: null,
   setSelectedRepository: () => null,
-  debouncedNameInputValue: '',
-  setDebouncedNameInputValue: () => '',
-  languageInputValue: '',
-  setLanguageInputValue: () => '',
-  onlyPublic: true,
-  setOnlyPublic: () => true,
-  typingNameInputValue: false,
-  setTypingNameInputValue: () => false,
   openDrawer: false,
   setOpenDrawer: () => false,
   openMailer: false,
@@ -59,11 +43,6 @@ export function GlobalContextProvider({
 }) {
   const [selectedRepository, setSelectedRepository] =
     useState<ListUserReposResponseWithIcon | null>(null);
-  const [typingNameInputValue, setTypingNameInputValue] =
-    useState<boolean>(false);
-  const [debouncedNameInputValue, setDebouncedNameInputValue] = useState('');
-  const [languageInputValue, setLanguageInputValue] = useState('');
-  const [onlyPublic, setOnlyPublic] = useState(true);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openMailer, setOpenMailer] = useState(false);
 
@@ -72,14 +51,6 @@ export function GlobalContextProvider({
       value={{
         selectedRepository,
         setSelectedRepository,
-        debouncedNameInputValue,
-        setDebouncedNameInputValue,
-        languageInputValue,
-        setLanguageInputValue,
-        onlyPublic,
-        setOnlyPublic,
-        typingNameInputValue,
-        setTypingNameInputValue,
         openDrawer,
         setOpenDrawer,
         openMailer,
