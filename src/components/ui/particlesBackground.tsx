@@ -49,6 +49,8 @@ export function ParticlesBackground({
   const mouseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [adjustedParticleCount, setAdjustedParticleCount] =
     useState(particleCount);
+  const prevDimensionsRef = useRef({ width: 0, height: 0 });
+  const resizeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Inicializa as partículas
   const initParticles = (width: number, height: number) => {
@@ -221,8 +223,25 @@ export function ParticlesBackground({
 
     // Ajusta o tamanho do canvas para o tamanho da tela
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Limpa timeout anterior para evitar múltiplas reinicializações
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
+
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
+      const prevWidth = prevDimensionsRef.current.width;
+      const prevHeight = prevDimensionsRef.current.height;
+
+      // Atualiza as dimensões do canvas
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+
+      // Calcula a diferença percentual na altura
+      const heightDiffPercent =
+        prevHeight > 0
+          ? Math.abs((newHeight - prevHeight) / prevHeight) * 100
+          : 100;
 
       // Ajusta o número de partículas com base no tamanho da tela
       const screenWidth = window.innerWidth;
@@ -241,7 +260,52 @@ export function ParticlesBackground({
         setAdjustedParticleCount(particleCount);
       }
 
-      initParticles(canvas.width, canvas.height);
+      // Só reinicializa as partículas se:
+      // 1. Primeira inicialização (prevWidth = 0)
+      // 2. Mudança significativa na largura (mais de 5%)
+      // 3. Mudança muito grande na altura (mais de 15%)
+      const shouldReinitialize =
+        prevWidth === 0 ||
+        Math.abs(newWidth - prevWidth) / prevWidth > 0.05 ||
+        heightDiffPercent > 15;
+
+      if (shouldReinitialize) {
+        // Aguarda um curto período antes de reinicializar para evitar múltiplas reinicializações durante scroll no iOS
+        resizeTimeoutRef.current = setTimeout(() => {
+          initParticles(newWidth, newHeight);
+          // Atualiza as dimensões anteriores
+          prevDimensionsRef.current = { width: newWidth, height: newHeight };
+        }, 100);
+      } else if (particlesRef.current.length > 0) {
+        // Apenas ajusta as partículas existentes para o novo tamanho da tela
+        adjustParticlesToNewDimensions(
+          prevWidth,
+          prevHeight,
+          newWidth,
+          newHeight
+        );
+        // Atualiza as dimensões anteriores
+        prevDimensionsRef.current = { width: newWidth, height: newHeight };
+      }
+    };
+
+    // Ajusta as partículas existentes para o novo tamanho sem reinicializar
+    const adjustParticlesToNewDimensions = (
+      oldWidth: number,
+      oldHeight: number,
+      newWidth: number,
+      newHeight: number
+    ) => {
+      const widthRatio = newWidth / oldWidth;
+      const heightRatio = newHeight / oldHeight;
+
+      particlesRef.current.forEach((particle) => {
+        // Ajusta proporcionalmente as posições das partículas
+        particle.x *= widthRatio;
+        particle.y *= heightRatio;
+        particle.originalX *= widthRatio;
+        particle.originalY *= heightRatio;
+      });
     };
 
     // Inicializa o canvas
@@ -265,9 +329,11 @@ export function ParticlesBackground({
       if (mouseTimeoutRef.current) {
         clearTimeout(mouseTimeoutRef.current);
       }
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
       cancelAnimationFrame(animationFrameRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     particleCount,
     particleColor,

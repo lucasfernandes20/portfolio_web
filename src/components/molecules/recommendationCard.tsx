@@ -22,12 +22,12 @@ export function RecommendationCard({
           <span className="text-xs desktop:text-lg font-semibold text-primary">
             {recommendation.name}
           </span>
-          <p className="text-xs text-card-foreground/70">
+          <p className="text-xs desktop:text-sm text-card-foreground/70">
             {recommendation.position}
           </p>
         </CardHeader>
         <CardContent className="p-6 pt-2">
-          <p className="text-xs default:text-sm text-card-foreground leading-relaxed">
+          <p className="text-xs desktop:text-base text-card-foreground leading-relaxed">
             {recommendation.recommendation}
           </p>
         </CardContent>
