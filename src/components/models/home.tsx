@@ -11,6 +11,7 @@ import { Subtitle } from '@components/ui/subtitle';
 import { ProfessionalExperiences } from '../organisms/professionalExperiences';
 import { ParticlesBackground } from '@components/ui/particlesBackground';
 import { useTheme } from 'next-themes';
+import { AboutMe } from '@components/organisms/aboutMe';
 
 export function HomeModel() {
   const { theme } = useTheme();
@@ -42,6 +43,7 @@ export function HomeModel() {
       <ScrollPageSection id="about" className="py-12">
         <BoardBackground type="center" />
         <section className="w-full flex flex-col items-center justify-center">
+          <AboutMe />
           <RecommendationSection />
         </section>
       </ScrollPageSection>
