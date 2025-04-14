@@ -3,7 +3,7 @@
 import { ScrollPageSection } from '@app/assets/scrollpage';
 import { RecommendationSection } from '@components/organisms/recommendationSection';
 import { RepositoriesList } from '@components/organisms/repositoriesList';
-import { Award, GithubIcon } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { Presentation } from '@components/organisms/presentation';
 import { InfiniteKnowledgeCarousel } from '@components/organisms/infiniteKnowledgeCarousel';
 import { BoardBackground } from '@components/ui/boardBackground';
@@ -49,9 +49,6 @@ export function HomeModel() {
       </ScrollPageSection>
       <ScrollPageSection id="repositories" className="py-12">
         <div className="w-full relative">
-          <Subtitle className="mb-4" icon={<GithubIcon />}>
-            Github repositories
-          </Subtitle>
           <RepositoriesList />
           <InfiniteKnowledgeCarousel />
         </div>

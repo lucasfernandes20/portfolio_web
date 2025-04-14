@@ -62,7 +62,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
+    @apply text-foreground;
     overflow-x: hidden;
   }
 
