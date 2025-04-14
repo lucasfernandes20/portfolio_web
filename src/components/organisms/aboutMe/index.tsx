@@ -46,7 +46,7 @@ export function AboutMe() {
             className="relative"
           >
             <div className="w-64 h-64 tablet:w-72 tablet:h-72 rounded-2xl overflow-hidden shadow-xl relative">
-              <div className="absolute inset-0 bg-blue-700 mix-blend-overlay z-10"></div>
+              <div className="absolute inset-0 bg-blue-500/60 mix-blend-overlay z-10"></div>
               <Image
                 src="/images/linkedin_profile.jpg"
                 alt="Lucas Fernandes"
@@ -146,18 +146,6 @@ export function AboutMe() {
             transition={{ duration: 0.6 }}
             className="col-span-1 tablet:col-span-3 bg-gradient-to-br from-card to-card/70 p-6 rounded-xl shadow-md border border-border/50 mb-6 overflow-hidden relative"
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/60 to-primary/0 -z-10"
-              animate={{
-                x: ['0%', '100%', '0%']
-              }}
-              transition={{
-                duration: 5,
-                ease: 'linear',
-                repeat: Infinity
-              }}
-            />
-
             <div className="flex items-center gap-2 mb-4">
               <div>
                 <Star className="text-primary" />

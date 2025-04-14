@@ -18,6 +18,21 @@ export function RecommendationCarousel() {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (autoPlay && api) {
+      interval = setInterval(() => {
+        api.scrollNext();
+      }, 5000);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [api, autoPlay]);
 
   useEffect(() => {
     if (!api) {
@@ -33,11 +48,27 @@ export function RecommendationCarousel() {
   }, [api]);
 
   const scrollPrev = () => {
-    api?.scrollPrev();
+    if (api) {
+      api.scrollPrev();
+      setAutoPlay(false);
+      setTimeout(() => setAutoPlay(true), 10000);
+    }
   };
 
   const scrollNext = () => {
-    api?.scrollNext();
+    if (api) {
+      api.scrollNext();
+      setAutoPlay(false);
+      setTimeout(() => setAutoPlay(true), 10000);
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+      setAutoPlay(false);
+      setTimeout(() => setAutoPlay(true), 10000);
+    }
   };
 
   return (
@@ -46,7 +77,7 @@ export function RecommendationCarousel() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative w-full">
+      <div className="relative w-full rounded-xl overflow-hidden">
         <Carousel
           opts={{
             align: 'center',
@@ -59,37 +90,31 @@ export function RecommendationCarousel() {
             {recommendations.map((recommendation, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full laptop:cursor-grab"
+                className="basis-full laptop:basis-2/3 desktop:basis-1/2 laptop:p-3 laptop:cursor-grab"
               >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <RecommendationCard recommendation={recommendation} />
-                </motion.div>
+                <RecommendationCard recommendation={recommendation} />
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
 
         <AnimatePresence>
-          {isHovered && (
+          {(isHovered || count <= 1) && (
             <>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
+                className="absolute left-2 tablet:left-4 top-1/2 -translate-y-1/2 z-10"
               >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-background/80 backdrop-blur-sm shadow-md hover:bg-background/90"
+                  className="rounded-full bg-background/70 backdrop-blur-sm shadow-md hover:bg-background/90 hover:scale-110 transition-all duration-300"
                   onClick={scrollPrev}
                 >
-                  <ChevronLeft className="h-6 w-6" />
+                  <ChevronLeft className="h-5 w-5 tablet:h-6 tablet:w-6 text-foreground/80" />
                 </Button>
               </motion.div>
 
@@ -98,15 +123,15 @@ export function RecommendationCarousel() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10"
+                className="absolute right-2 tablet:right-4 top-1/2 -translate-y-1/2 z-10"
               >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-background/80 backdrop-blur-sm shadow-md hover:bg-background/90"
+                  className="rounded-full bg-background/70 backdrop-blur-sm shadow-md hover:bg-background/90 hover:scale-110 transition-all duration-300"
                   onClick={scrollNext}
                 >
-                  <ChevronRight className="h-6 w-6" />
+                  <ChevronRight className="h-5 w-5 tablet:h-6 tablet:w-6 text-foreground/80" />
                 </Button>
               </motion.div>
             </>
@@ -114,22 +139,50 @@ export function RecommendationCarousel() {
         </AnimatePresence>
       </div>
 
-      <div className="flex items-center gap-2">
-        {Array.from({ length: count }).map((_, index) => (
-          <motion.div
-            key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={cn(
-              'w-2.5 h-2.5 rounded-full bg-muted-foreground/40 transition-all duration-300 cursor-pointer hover:bg-muted-foreground/80',
-              {
-                'bg-blue-500 scale-125': current === index + 1
-              }
-            )}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          />
-        ))}
-      </div>
+      {count > 1 && (
+        <div className="flex items-center gap-2 mb-4">
+          {Array.from({ length: count }).map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={cn(
+                'relative flex items-center justify-center h-7 w-7 transition-all',
+                {}
+              )}
+              whileTap={{ scale: 0.9 }}
+            >
+              <motion.div
+                className={cn(
+                  'w-2 h-2 rounded-full bg-muted-foreground/30 hover:bg-muted-foreground/60 transition-all duration-300',
+                  {
+                    'bg-primary scale-100': current === index + 1
+                  }
+                )}
+                whileHover={{ scale: 1.3 }}
+                animate={{
+                  scale: current === index + 1 ? 1.3 : 1
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              {current === index + 1 && (
+                <motion.div
+                  className="absolute inset-0 rounded-full border border-primary/50"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{
+                    opacity: [0, 0.8, 0],
+                    scale: [0.8, 1.8, 0.8]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: 'loop'
+                  }}
+                />
+              )}
+            </motion.button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
