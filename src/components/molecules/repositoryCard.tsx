@@ -49,10 +49,9 @@ export function RepositoryCard({ repository }: RepositoryCardProps) {
             : ''
         )}
       >
-        {/* Gradient accent line at top of card */}
         <div
           className={cn(
-            'h-1 w-full bg-gradient-to-r from-primary/50 via-primary to-primary/50 absolute top-0 left-0 transition-all duration-500',
+            'h-1 w-full bg-gradient-to-r from-primary/5 via-primary to-primary/5 absolute top-0 left-0 transition-all duration-500',
             isHovered ? 'opacity-100' : 'opacity-50'
           )}
         ></div>

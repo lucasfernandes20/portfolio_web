@@ -3,11 +3,9 @@
 import { ScrollPageSection } from '@app/assets/scrollpage';
 import { RecommendationSection } from '@components/organisms/recommendationSection';
 import { RepositoriesList } from '@components/organisms/repositoriesList';
-import { Award } from 'lucide-react';
 import { Presentation } from '@components/organisms/presentation';
 import { InfiniteKnowledgeCarousel } from '@components/organisms/infiniteKnowledgeCarousel';
 import { BoardBackground } from '@components/ui/boardBackground';
-import { Subtitle } from '@components/ui/subtitle';
 import { ProfessionalExperiences } from '../organisms/professionalExperiences';
 import { ParticlesBackground } from '@components/ui/particlesBackground';
 import { useTheme } from 'next-themes';
@@ -56,7 +54,6 @@ export function HomeModel() {
       <ScrollPageSection id="career" className="pt-12 pb-28">
         <BoardBackground type="bottom" />
         <div className="w-full flex flex-col gap-5 items-center">
-          <Subtitle icon={<Award />}>Career</Subtitle>
           <ProfessionalExperiences />
         </div>
       </ScrollPageSection>
