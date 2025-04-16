@@ -193,9 +193,9 @@ const CustomStepper: React.FC<StepperProps> = ({
                 className={cn(
                   'transition-all duration-300',
                   isActive
-                    ? 'bg-primary/80 opacity-100'
+                    ? 'bg-[hsl(var(--primary)_/_0.8)_!important] opacity-100'
                     : isCompleted
-                      ? 'bg-primary/30'
+                      ? 'bg-[hsl(var(--primary)_/_0.8)_!important]'
                       : 'bg-muted-foreground/20 group-hover:bg-muted-foreground/30'
                 )}
                 style={{
