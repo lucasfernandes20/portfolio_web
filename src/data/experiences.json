@@ -1,7 +1,7 @@
 [
   {
     "title": "Linked",
-    "description": "Frontend web developer",
+    "description": "Frontend software engineer",
     "details": "As a front-end developer at my current company, I am responsible for writing, maintaining, and implementing new features in the codebase for B2B applications used primarily in the restaurant industry.",
     "logo": "https://media.licdn.com/dms/image/C4E0BAQHEpj9Q8bkXKQ/company-logo_200_200/0/1630588232721/linkedgourmet_logo?e=2147483647&v=beta&t=Ejb944OpKGzhLQeKszNqnMSJEMQrwfgOkBLVIIWP0zM",
     "technologies": [
@@ -10,7 +10,8 @@
       "Electron",
       "Typescript"
     ],
-    "date": "06/2024 - current"
+    "startDate": "06/2024",
+    "endDate": "current"
   },
   {
     "title": "TripleAI",
@@ -28,7 +29,8 @@
       "Material-UI",
       "Figma"
     ],
-    "date": "08/2023 - 04/2024"
+    "startDate": "08/2023",
+    "endDate": "04/2024"
   },
   {
     "title": "6Place",
@@ -46,7 +48,8 @@
       "Styled Components",
       "Jest"
     ],
-    "date": "02/2022 - 08/2023"
+    "startDate": "02/2022",
+    "endDate": "08/2023"
   },
   {
     "title": "Trybe",
@@ -68,7 +71,8 @@
       "React Testing Library",
       "Python"
     ],
-    "date": "04/2021 - 04/2022"
+    "startDate": "04/2021",
+    "endDate": "04/2022"
   },
   {
     "title": "ArtDesign",
@@ -83,6 +87,7 @@
       "PHP",
       "MySQL"
     ],
-    "date": "02/2021 - 12/2021"
+    "startDate": "02/2021",
+    "endDate": "12/2021"
   }
 ]

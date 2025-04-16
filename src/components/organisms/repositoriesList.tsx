@@ -25,6 +25,29 @@ import {
 
 const REPO_INITIAL_STATE = { data: [], loading: true, error: false };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut'
+    }
+  }
+};
+
 export function RepositoriesList() {
   const { selectedRepository, setSelectedRepository } = useGlobalContext();
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,6 +56,7 @@ export function RepositoriesList() {
     'updated'
   );
   const [languages, setLanguages] = useState<string[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   const [repositories, setRepositories] = useState<{
     data: ListUserReposResponseWithIcon[];
@@ -43,6 +67,24 @@ export function RepositoriesList() {
 
   useEffect(() => {
     getRepositories();
+
+    const checkVisibility = () => {
+      const element = document.getElementById('repositories-section');
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const isInViewport =
+          rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.bottom >= 0;
+        setIsVisible(isInViewport);
+      }
+    };
+
+    // Verificar imediatamente e após um pequeno delay para garantir que o DOM esteja pronto
+    checkVisibility();
+    const timer = setTimeout(checkVisibility, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Filtrar e ordenar repositórios
@@ -134,13 +176,16 @@ export function RepositoriesList() {
 
   return (
     <LayoutGroup>
-      <div className="w-full flex flex-col gap-5">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4"
-        >
+      <motion.div
+        id="repositories-section"
+        className="w-full flex flex-col gap-5"
+        initial="hidden"
+        animate={isVisible ? 'visible' : 'hidden'}
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px', amount: 0.1 }}
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants} className="flex flex-col gap-4">
           <div className="flex flex-col tablet:flex-row justify-between items-start tablet:items-center gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <GithubIcon className="w-6 h-6 text-primary" />
@@ -244,11 +289,7 @@ export function RepositoriesList() {
               ))}
             </div>
           ) : repositories.error ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-10"
-            >
+            <div className="text-center py-10">
               <p className="text-muted-foreground">
                 Error loading repositories. Please try again later.
               </p>
@@ -259,13 +300,9 @@ export function RepositoriesList() {
               >
                 Try again
               </Button>
-            </motion.div>
+            </div>
           ) : repositories.filteredData.length === 0 ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-10"
-            >
+            <motion.div variants={itemVariants} className="text-center py-10">
               <p className="text-muted-foreground">
                 No repositories found with the applied filters.
               </p>
@@ -275,27 +312,13 @@ export function RepositoriesList() {
             </motion.div>
           ) : (
             <motion.ul
+              variants={containerVariants}
               className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-4 auto-rows-fr"
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
             >
               {repositories.filteredData.map((repo) => (
                 <motion.div
                   key={repo.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    show: { opacity: 1, y: 0 }
-                  }}
-                  transition={{ duration: 0.4 }}
+                  variants={itemVariants}
                   className="h-full"
                 >
                   <RepositoryCard repository={repo} />
@@ -304,13 +327,12 @@ export function RepositoriesList() {
             </motion.ul>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       {selectedRepository?.id && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           className="fixed top-0 left-0 right-0 bottom-0 bg-background/80 backdrop-blur-sm z-40"
           onClick={() => setSelectedRepository(null)}
         />
