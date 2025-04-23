@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@components/ui/button';
-import { AlignRight } from 'lucide-react';
+import { AlignRight, FileText } from 'lucide-react';
 import { HeaderNavigator } from '@components/molecules/headerNavigator';
 import { Drawer } from './drawer';
 import { useGlobalContext } from '@app/context/store';
@@ -16,6 +16,10 @@ export function Header() {
   const { setOpenMailer } = useGlobalContext();
 
   const [scrolled, setScrolled] = useState(false);
+
+  const openResume = () => {
+    window.open('/resume.pdf', '_blank');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,22 +58,34 @@ export function Header() {
             Portfolio
           </h1>
           <HeaderNavigator className="hidden tablet:flex" />
-          <Button
-            variant="ghost"
-            size="lg"
-            className="block hover:bg-muted-foreground/10 p-2 tablet:hidden"
-            onClick={() => setOpenDrawer((prev) => !prev)}
-          >
-            <AlignRight className="text-muted-foreground h-8 w-8" />
-          </Button>
-          <Button
-            variant="outline"
-            size="default"
-            className="hidden border-primary laptop:block p-2 py-0"
-            onClick={() => setOpenMailer((prev) => !prev)}
-          >
-            <p className="text-base text-primary">Contact me</p>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="default"
+              className="hidden tablet:flex border-primary"
+              onClick={openResume}
+              title="Currículo"
+            >
+              <FileText className="h-4 w-4 text-primary mr-1" />
+              Curriculum
+            </Button>
+            <Button
+              variant="outline"
+              size="default"
+              className="hidden border-primary laptop:block p-2 py-0"
+              onClick={() => setOpenMailer((prev) => !prev)}
+            >
+              <p className="text-base text-primary">Contact me</p>
+            </Button>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="block hover:bg-muted-foreground/10 p-2 tablet:hidden"
+              onClick={() => setOpenDrawer((prev) => !prev)}
+            >
+              <AlignRight className="text-muted-foreground h-8 w-8" />
+            </Button>
+          </div>
         </div>
       </motion.header>
     </AnimatePresence>
